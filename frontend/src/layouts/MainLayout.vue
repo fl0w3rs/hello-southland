@@ -28,7 +28,9 @@
 
         </q-space>
         <div class="text-bold brand-text brand-text-footer">
-          fl0w3rs.dev
+          <span class="brand-text">
+            South<span class="brand-text-la">LA</span>nd Project
+          </span>
         </div>
       </q-toolbar>
     </q-footer>
@@ -39,7 +41,6 @@
 
 .brand-text {
   letter-spacing: 2.3px;
-  font-size: 21px;
   user-select: none;
 }
 
@@ -56,6 +57,11 @@
 
 .q-layout__shadow {
   display: none;
+}
+
+.q-page-container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 </style>
 

@@ -1,19 +1,40 @@
 <template>
   <q-page>
     <q-parallax
-      :height="parallaxHeight"
-      src="https://southland-rp.ru/uploads/monthly_2021_06/unknown.png.1a4fd0ca2976fa22f0ba3d6ef33e4b3a.png"
-      :speed="1.2"
+      :height="sectionHeight"
+      :speed="2"
     >
+      <template v-slot:media>
+        <img
+          src="https://southland-rp.ru/uploads/monthly_2021_06/unknown.png.1a4fd0ca2976fa22f0ba3d6ef33e4b3a.png"
+        >
+      </template>
       <div class="row justify-center items-center text-center q-pa-md">
-        <div class="col-12">
-          <h4 class="text-bold row items-center q-ma-none">
+        <div class="col-12 q-mb-xl">
+          <h4 class="text-bold q-ma-none">
             Закрытое сообщество, аналоги
             которого определённо существуют
           </h4>
           <h5 class="text-bold text-grey-6 q-ma-none">
             ... но будут ли они лучше?
           </h5>
+        </div>
+
+        <div class="col-12 q-mt-xl">
+          <div
+            class="
+              q-pa-md bg-grey-4 text-black shadow-9
+              text-bold text-h5 rounded-borders
+            " style="display:inline-block"
+          >
+            Статус приёма заявок: <span class="text-red-8">закрыт</span>
+            <br/>
+            <q-btn
+              outline size="lg" color="black" icon="help_outline"
+              class="q-mt-sm" label="Информация о вступлении" rounded
+              @click="scrollToJoinSection"
+            ></q-btn>
+          </div>
         </div>
 
       </div>
@@ -72,7 +93,7 @@
     <div
       class="q-pa-md row justify-center items-center"
       :style='{ minHeight: `${sectionHeight}px` }'
-      id="joinUs"
+      id="joinUsSection"
     >
       <div class="row text-center justify-center">
         <div class="col-12">
@@ -132,22 +153,31 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { scroll } from 'quasar';
+
+const { getScrollTarget, setVerticalScrollPosition } = scroll;
+
+function scrollToElement(el: HTMLElement) {
+  const target = getScrollTarget(el);
+  setVerticalScrollPosition(target, el.offsetTop, 1000);
+}
 
 export default defineComponent({
   name: 'PageIndex',
   setup() {
+    const scrollToJoinSection = () => {
+      scrollToElement(document.getElementById('joinUsSection')!);
+    };
+
     return {
-      parallaxHeight: window.innerHeight - 99.5,
-      sectionHeight: window.innerHeight * 0.5 - 99.5,
+      sectionHeight: window.innerHeight,
+      scrollToJoinSection,
     };
   },
 });
 </script>
 
 <style lang="scss">
-.q-parallax__content {
-  box-shadow: inset 0px 10px 5px #121212, inset 0px -10px 5px #121212;
-}
 
 .section-label {
   color: $grey-6;
