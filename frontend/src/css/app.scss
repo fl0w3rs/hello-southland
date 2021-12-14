@@ -1,4 +1,10 @@
 // app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif!important;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

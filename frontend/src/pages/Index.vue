@@ -3,12 +3,8 @@
     <q-parallax
       :height="sectionHeight"
       :speed="2"
+      src="https://southland-rp.ru/uploads/monthly_2021_06/unknown.png.1a4fd0ca2976fa22f0ba3d6ef33e4b3a.png"
     >
-      <template v-slot:media>
-        <img
-          src="https://southland-rp.ru/uploads/monthly_2021_06/unknown.png.1a4fd0ca2976fa22f0ba3d6ef33e4b3a.png"
-        >
-      </template>
       <div class="row justify-center items-center text-center q-pa-md">
         <div class="col-12 q-mb-xl">
           <h4 class="text-bold q-ma-none">
@@ -23,14 +19,14 @@
         <div class="col-12 q-mt-xl">
           <div
             class="
-              q-pa-md bg-grey-4 text-black shadow-9
-              text-bold text-h5 rounded-borders
+              q-pa-md
+              text-bold text-h5
             " style="display:inline-block"
           >
             Статус приёма заявок: <span class="text-red-8">закрыт</span>
             <br/>
             <q-btn
-              outline size="lg" color="black" icon="help_outline"
+              outline size="lg" color="light" icon="help_outline"
               class="q-mt-sm" label="Информация о вступлении" rounded
               @click="scrollToJoinSection"
             ></q-btn>
@@ -43,14 +39,25 @@
     <div
       class="q-pa-md row justify-center items-center"
       :style='{ minHeight: `${sectionHeight}px` }'>
-      <div class="row text-center">
+      <div class="row text-center justify-center">
         <div class="col-12">
-          <p class="section-label text-white">
-            Взаимодействие гражданских и государственных служб
+          <p class="text-h3 text-bold text-white">
+            Немного о нас
           </p>
         </div>
-        <div class="col-12 text-grey-6 text-center text-h6">
-          <span class="text-red-4">Это то, на чём строится наш сервер.</span><br/>
+        <div class="col-12 row justify-center items-center">
+          <b class="fancy-splitter col-12 col-md-6 col-lg-4"></b>
+        </div>
+        <div class="col-12 col-md-10 col-lg-8 text-grey-6 text-center text-h6">
+          Наш проект — это уникальное сообщество GTA V, построенное на
+          семейных ценностях и дружелюбной атмосфере между участниками.
+          Мы базируемся на платформе FiveM, которая даёт возможность воплощать наши идеи
+          в реальность, а именно добавлять реалистичные модификации, которые улучшают процесс
+          взаимодействия между департаментами и дают незабываемые ощущение участникам нашего
+          сообщества. Вам не потребуется суточное скачивание контента для игры, всё установится
+          автоматически благодаря ресурсам проекта. У нас вы можете почувствовать настоящий
+          ролевой режим, лучшее взаимодействие государственных и гражданских структур,
+          основанных на реальных протоколах экстренных служб США.<br/>
           При подаче заявки <span class="text-green-6">ты сам выбираешь, кем хочешь стать</span>,
           а <span class="text-cyan-6">в дальнейшем можешь изменить свой выбор</span>.
         </div>
@@ -70,20 +77,167 @@
       </div>
     </div>
 
-    <b class="fancy-splitter"></b>
+    <q-parallax
+      :height="sectionHeight * (2/3)"
+      :speed="1"
+      src="http://i.imgur.com/FQ7FE0X.jpg"
+    >
+      <div class="column text-center">
+        <h3 class="text-white text-bold q-ma-none q-mb-lg">Департаменты</h3>
+        <div class="dlogos">
+          <a href="#" class="dlogos__item dlogos__item__first">
+            <img src="https://southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.png.666047c073e67b4f132498b0f6fe083b.png" alt="">
+          </a>
+          <a href="#" class="dlogos__item">
+            <img src="https://southland-rp.ru/uploads/monthly_2021_03/137182397_LosSantosCountyFireDepartment.png.f6bfea91c7fe2f73dd0178234d70e450.png" alt="">
+          </a>
+          <a href="#" class="dlogos__item">
+            <img src="https://southland-rp.ru/uploads/monthly_2021_03/ddd2.thumb.png.e67cb87d23f25d4cfa9bb7d6228bc775.png" alt="">
+          </a>
+          <a href="#" class="dlogos__item"><img src="https://randomuser.me/api/portraits/men/55.jpg" alt=""></a>
+          <a href="#" class="dlogos__item"><img src="https://via.placeholder.com/300/09f/fff.png" alt=""></a>
+        </div>
+
+      </div>
+    </q-parallax>
 
     <div
       class="q-pa-md row justify-center items-center"
-      :style='{ minHeight: `${sectionHeight}px` }'>
-      <div class="row text-center justify-center">
-        <div class="col-12">
-          <p class="section-label text-white">Уникальная экосистема</p>
+      :style='{ minHeight: `${sectionHeight}px` }'
+    >
+      <div class="row text-center justify-center q-col-gutter-sm">
+        <div class="col-12 col-md-10 col-lg-9">
+          <div style="display: table; width: 100%;">
+            <div style="width: 150px; display: table-cell; vertical-align: top;">
+              <img
+                src="https://southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.thumb.png.e2519e6492c1e511ae6cb3a51ca1dda4.png"
+                alt=""
+                style="width: 125px; height: auto;"
+                class="q-mr-md"
+              />
+            </div>
+            <div
+              class="text-left"
+              style="width: auto; display: table-cell; vertical-align: middle;"
+            >
+              <span class="text-h5 text-bold">
+                Los Santos Police Department & Blaine County Sheriff's Office
+              </span>
+              <br/>
+              <span>
+                Это объединение
+                двух государственных ведомств, созданное для улучшения атмосферы на нашем проекте.
+                Два департамента занимаются контролем за соблюдением правосудия на территории
+                всего штата.
+                Нашей первостепенной задачей является создание крепких взаимоотношений
+                для дальнейшего
+                сотрудничества в области правопорядка. В наших департаментах находится множество
+                отделов,
+                которые специализируются на узком спектре задач. Мы ждем каждого, кто предан своей
+                стране,
+                готов защищать законы и заинтересован в сохранении правосудия в нашем штате.
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="col-12 text-grey-6 text-center text-h6">
-          Она постоянно дорабатывается нашей командой.<br/>
-          Мы используем разработанные нами продукты:
-          <span class="text-orange-6 text-bold">базу данных Console</span>,
-          <span class="text-blue-6 text-bold">систему тестирования Alderney</span>.
+        <div class="q-mt-xl col-12 col-md-10 col-lg-9 row q-col-gutter-sm text-left">
+          <div class="col-12 row items-center">
+            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                BE A <span style="color:#f1c40f">PATROL UNIT</span>
+              </h4>
+              <span class="q-ma-none" style="font-size: 18px">
+                <b>Patrol Division</b> — основной дивизион полицейского департамента,
+                которое вы получите при вступлении в наш департамент. Задача
+                нашего отдела — контроль
+                и соблюдение правил дорожного движения на территории дорог штата.
+                Большую часть времени вы будете находиться с напарником, патрулируя
+                различные территории, предотвращая совершения преступления и помогая
+                населению в их проблемах. Мы ждем каждого, кто заинтересован в соблюдение
+                правопорядка в нашем штате, вступайте в наш отдел, мы ждем именно вас!
+              </span>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <img
+                src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_09.png.996b5cc8f2d9590cf3ce53fac748f754.png"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 row q-mt-md items-center">
+            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                BE A <span style="color:#2ecc71;">RANGER</span>
+              </h4>
+              <span class="q-ma-none" style="font-size: 18px">
+                <b>Park Ranger</b> — являются основным органом по обеспечению соблюдения законов
+                о дикой природе в штате Сан-Андреас. На наш отдел возложена большая
+                миссия — сохранение экологической и исторической целостности парковых зон,
+                обеспечение безопасности посетителей, доступности для общественного
+                пользования парковых зон, мониторинг популяции вымирающих животных,
+                контроль разрешений на оружие для охоты и соблюдение правил охоты
+              </span>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <img
+                src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_02.png.3646cfec848279e845c8cedba0b66621.png"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 row q-mt-md items-center">
+            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                BE A <span style="color:#2980b9">METRO OFFICER</span>
+              </h4>
+              <span class="q-ma-none" style="font-size: 18px">
+                <b>Metropolitan Division</b> — специальный дивизион нашего департамента.
+                SWAT – элитное подразделение в каждом полицейском департаменте.
+                Служить в нем большая честь для офицеров местной полиции.
+                Ежегодно несколько сотен сотрудников подают рапорта с просьбой
+                получить право пройти отборочные испытания, чтобы вступить в команду.
+                Потенциальный кандидат в спецназ должен проработать в полиции должен
+                обладать важными качествами, такими как: коммуникабельность,
+                крепкий характер и умение работать с командой. Важно чтобы в
+                вашем послужном списке не было неснятых взысканий, иначе путь в
+                нашу команду для вас закрыт. После этого офицера включают в список
+                кандидатов для сдачи физического теста. Цель SWAT — обеспечение защиты
+                поддержки, охраны, огневой мощи и спасения в ходе полицейских операций в ситуациях
+              </span>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <img
+                src="https://southland-rp.ru/uploads/monthly_2021_06/large.20210610195820_1.jpg.146f533bb153e5f15f30d3cfc0fd14aa.jpg"
+                style="width: 100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 row q-mt-md items-center">
+            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                BE A <span style="color:#e67e22;">DETECTIVE</span>
+              </h4>
+              <span class="q-ma-none" style="font-size: 18px">
+                <b>Detective Bureau</b> — расcледуют преступления путем сбора доказательств
+                и фактов.
+                Детектив работает над сбором доказательств и фактов по уголовным делам.
+                Обязанности включают собеседование с потенциальными подозреваемыми,
+                изучение записей и задержание преступников. Эти полицейские будут работать
+                над конкретными делами, пока они не будут решены или не будут удалены.
+                Для полицейских детективов важно вести надлежащие записи и записи в случае,
+                если им необходимо давать показания в суде. Общеизвестно, что детективы должны
+                быть привлечены к суду в качестве свидетеля или давать показания. Другие
+                обязанности могут включать в себя координацию на месте преступления, сбор
+                доказательств на месте преступления и сбор доказательств от подозреваемых
+              </span>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3">
+              <img
+                src="https://southland-rp.ru/uploads/monthly_2021_06/large.236147007_DesktopScreenshot2021_06.03-02_11_20_22.png.1f0bff5373b425707f4ebdb39e9abc34.png"
+                style="width: 100%"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -100,10 +254,18 @@
           <p class="section-label text-white">Хочешь попробовать?</p>
         </div>
         <div class="col-12 text-grey-6 text-center text-h6">
+          На данный момент статус приёма заявок - <span class="text-red-6">закрыт</span>.
+          <br/>
+          <span class="text-white">
+            Следующее открытие заявок запланировано на 20-е числа августа.
+          </span>
+          <br/>
           Процесс вступления может показаться трудным, но
           <span class="text-warning">на самом деле в этом нет ничего сложного</span>.
+          <br/>
+          Вступление в сообщество происходит в 5 этапов.
         </div>
-        <div class="col-12 col-md-9 col-lg-7 q-mt-md">
+        <div class="col-12 col-md-9 col-lg-7 q-mt-sm">
           <q-stepper
             ref="stepper"
             color="primary"
@@ -146,6 +308,11 @@
             </q-step>
           </q-stepper>
         </div>
+        <div class="col-12 text-white text-center text-h6 q-mt-xl">
+          Чтобы просмотреть более подробную информацию, нажмите кнопку ниже.
+          <br/>
+          <q-btn outline color="green" class="q-mt-md" size="lg" label="Попробуем"></q-btn>
+        </div>
       </div>
     </div>
   </q-page>
@@ -178,6 +345,55 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+
+.dlogos__item:hover {
+  transform: scale(1.5);
+  transition: all 200ms ease;
+}
+
+.dlogos {
+  display: flex;
+  list-style-type: none;
+  margin: auto;
+  padding: 0px;
+  flex-direction: row;
+  &__item {
+    background-color: #596376;
+    border: 2px solid #1f2532;
+    border-radius: 100%;
+    color: #ffffff;
+    height: 96px;
+    width: 96px;
+    transition: margin 0.3s ease-in-out;
+    overflow: hidden;
+    margin-left: -32px;
+    &__first {
+      margin-left: 0px;
+    }
+    &:first-child {
+      z-index: 5;
+    }
+    &:nth-child(2) {
+      z-index: 4;
+    }
+    &:nth-child(3) {
+      z-index: 3;
+    }
+    &:nth-child(4) {
+      z-index: 2;
+    }
+    &:nth-child(5) {
+      z-index: 1;
+    }
+    &:last-child {z-index: 0}
+    img{ width:100% }
+  }
+  &:hover {
+    .dlogos__item:not(.dlogos__item__first) {
+      margin-left: 24px;
+    }
+  }
+}
 
 .section-label {
   color: $grey-6;

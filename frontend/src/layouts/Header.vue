@@ -5,15 +5,27 @@
         <div
           :style='{ transform: `rotate(${rotateDeg}deg)` }'
           class="text-bold brand-text cursor-pointer"
-          @click="lol = !lol"
         >
           <img
             :src='
-              lol ? "https://media.discordapp.net/attachments/770675271208140800/918982945203712020/logo_krug2.png?width=668&height=676"
-              : "https://media.discordapp.net/attachments/918962856660201512/918983379985240124/logo_krug2_1.png?width=668&height=676"
+              "https://media.discordapp.net/attachments/770675271208140800/918982945203712020/logo_krug2.png?width=668&height=676"
             '
+            v-morph:logo:mygroup:500.resize="morphGroupModel"
+            @click="switchMorph"
             height="100"
           />
+        </div>
+        <div
+          v-morph:faq:mygroup:1000.resize="morphGroupModel"
+          class="fullscreen bg-dark text-white q-pa-xl full-window"
+        >
+          <span class="text-h2 text-bold">Часто задаваемые вопросы</span>
+          <div class="absolute-top-right q-pa-xl">
+            <q-icon
+              name="close" color="red"
+              class="cursor-pointer text-h5" @click="switchMorph"
+            ></q-icon>
+          </div>
         </div>
       </div>
       <!-- <div class="row justify-center">
@@ -37,8 +49,6 @@ export default defineComponent({
     const rotateStep = (window.innerHeight / 360);
     const rotateDeg = computed(() => scrollPos.value / rotateStep);
 
-    const lol = ref(false);
-
     const onScroll = () => {
       scrollPos.value = window.scrollY;
     };
@@ -51,11 +61,21 @@ export default defineComponent({
       window.removeEventListener('scroll', onScroll);
     });
 
+    const morphGroupModel = ref('logo');
+    const switchMorph = () => {
+      if (morphGroupModel.value === 'logo') {
+        morphGroupModel.value = 'faq';
+      } else {
+        morphGroupModel.value = 'logo';
+      }
+    };
+
     return {
       scrollPos,
       rotateStep,
       rotateDeg,
-      lol,
+      morphGroupModel,
+      switchMorph,
     };
   },
 });

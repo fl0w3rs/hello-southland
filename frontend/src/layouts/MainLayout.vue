@@ -1,5 +1,6 @@
 <template>
   <q-layout view="lHh Lpr fff" class="no-shadow">
+
     <Header />
 
     <q-page-container>
@@ -19,10 +20,13 @@
           <q-icon
             name="fab fa-vk"
             class="text-h5 cursor-pointer"
+            @click="redirectTo('https://vk.com')"
           >
 
           </q-icon>
-          <q-icon name="fab fa-twitter" class="text-h5"></q-icon>
+          <q-icon name="fab fa-youtube" class="text-h5 cursor-pointer">
+
+          </q-icon>
         </div>
         <q-space>
 
@@ -74,6 +78,14 @@ export default defineComponent({
   name: 'MainLayout',
   components: {
     Header,
+  },
+  setup() {
+    const redirectTo = (url: string) => {
+      window.location.href = url;
+    };
+    return {
+      redirectTo,
+    };
   },
 });
 </script>
