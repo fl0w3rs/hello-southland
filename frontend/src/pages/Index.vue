@@ -106,8 +106,23 @@
     <q-parallax
       :height="sectionHeight * (2/3)"
       :speed="1"
-      src="http://i.imgur.com/FQ7FE0X.jpg"
+      @scroll="scrollCallback($event, 'departments')"
     >
+      <template v-slot:media>
+        <div>
+          <img
+            src="http://i.imgur.com/FQ7FE0X.jpg"
+            :style="{
+              height: 'auto',
+              width: '100%',
+              transform: `scale(
+                ${scrollPosition['departments'] ? 1.5 - Math.abs(scrollPosition['departments'] - 0.5) : 1}
+              )`
+            }"
+          >
+
+        </div>
+      </template>
       <div class="column text-center">
         <h3 class="text-white text-bold q-ma-none q-mb-lg">Департаменты</h3>
         <div class="dlogos">
@@ -507,11 +522,18 @@ export default defineComponent({
     };
 
     const carouselSlide = ref('lspd');
+    const scrollPosition = ref<Record<string, number>>({});
+
+    const scrollCallback = (percentage: number, image: string) => {
+      scrollPosition.value[image] = percentage;
+    };
 
     return {
       sectionHeight: window.innerHeight,
       scrollToJoinSection,
       carouselSlide,
+      scrollCallback,
+      scrollPosition,
     };
   },
 });
