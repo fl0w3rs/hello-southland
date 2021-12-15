@@ -2,8 +2,8 @@
   <q-page>
     <q-parallax
       :height="sectionHeight"
-      :speed="2"
-      src="https://southland-rp.ru/uploads/monthly_2021_06/unknown.png.1a4fd0ca2976fa22f0ba3d6ef33e4b3a.png"
+      :speed="0"
+      src="https://southland-rp.ru/uploads/monthly_2020_12/large.20201221142545_1.png.4232c6a11aa86afe34d2c898303aba9e.png"
     >
       <div class="row justify-center items-center text-center q-pa-md">
         <div class="col-12 q-mb-xl">
@@ -87,7 +87,7 @@
               <p class="text-h4 text-bold q-ma-none">
                 <q-icon name="phone"></q-icon> Диспетчерский департамент
               </p>
-              <p class="text-h6 q-ma-none">Контролируют государственные службы</p>
+              <p class="text-h6 q-ma-none">Координируют государственные службы</p>
             </div>
             <div class="q-mt-xl">
               <p class="text-h4 text-bold q-ma-none">
@@ -111,15 +111,18 @@
       <template v-slot:media>
         <div>
           <img
-            src="http://i.imgur.com/FQ7FE0X.jpg"
+            src="https://i.yapx.ru/PkcWR.png"
             :style="{
               height: 'auto',
               width: '100%',
               transform: `scale(
-                ${scrollPosition['departments'] ? 1.5 - Math.abs(scrollPosition['departments'] - 0.5) : 1}
+                ${(scrollPosition['departments'] ? 1.166 - (Math.abs(scrollPosition['departments'] - 0.5) / 3) : 1)}
               )`
             }"
           >
+          <!-- http://i.imgur.com/FQ7FE0X.jpg -->
+          <!-- https://southland-rp.ru/uploads/monthly_2021_03/large.60276478_FiveM_GTAProcess2021-03-0800-56-18.png.f9ce023ec9cc33163959782163731dfe.png -->
+          <!-- https://southland-rp.ru/uploads/monthly_2021_06/large.1243668866_FiveM_GTAProcess2021-06-0123-34-55.png.72c37b5cc1f3cb18e6e2b0463aa829e4.png -->
 
         </div>
       </template>
@@ -130,13 +133,15 @@
             <img src="https://southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.png.666047c073e67b4f132498b0f6fe083b.png" alt="">
           </a>
           <a href="#" class="dlogos__item">
+            <img src="https://southland-rp.ru/uploads/monthly_2021_04/523595685_SanAndreasHighwayPatrol.thumb.png.0d0f44fe380287f2e5b88b8d4c0813d9.png" alt="">
+          </a>
+          <a href="#" class="dlogos__item">
             <img src="https://southland-rp.ru/uploads/monthly_2021_03/137182397_LosSantosCountyFireDepartment.png.f6bfea91c7fe2f73dd0178234d70e450.png" alt="">
           </a>
           <a href="#" class="dlogos__item">
             <img src="https://southland-rp.ru/uploads/monthly_2021_03/ddd2.thumb.png.e67cb87d23f25d4cfa9bb7d6228bc775.png" alt="">
           </a>
-          <a href="#" class="dlogos__item"><img src="https://randomuser.me/api/portraits/men/55.jpg" alt=""></a>
-          <a href="#" class="dlogos__item"><img src="https://via.placeholder.com/300/09f/fff.png" alt=""></a>
+          <a href="#" class="dlogos__item"><img src="https://i.imgur.com/fKi3IDT.png" alt=""></a>
         </div>
 
       </div>
@@ -213,28 +218,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_09.png.996b5cc8f2d9590cf3ce53fac748f754.png"
-                    style="width: 100%"
-                  />
-                </div>
-              </div>
-              <div class="col-12 row q-mt-md items-center">
-                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
-                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
-                    BE A <span style="color:#2ecc71;">RANGER</span>
-                  </h4>
-                  <span class="q-ma-none" style="font-size: 18px">
-                    <b>Park Ranger</b> — являются основным органом по обеспечению соблюдения законов
-                    о дикой природе в штате Сан-Андреас. На наш отдел возложена большая
-                    миссия — сохранение экологической и исторической целостности парковых зон,
-                    обеспечение безопасности посетителей, доступности для общественного
-                    пользования парковых зон, мониторинг популяции вымирающих животных,
-                    контроль разрешений на оружие для охоты и соблюдение правил охоты
-                  </span>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3">
-                  <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_02.png.3646cfec848279e845c8cedba0b66621.png"
+                    src="https://southland-rp.ru/uploads/monthly_2021_05/large.2021_05.21-09_52.png.0a52d2aaabd15c136187e37099c6fb9a.png"
                     style="width: 100%"
                   />
                 </div>
@@ -262,7 +246,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.20210610195820_1.jpg.146f533bb153e5f15f30d3cfc0fd14aa.jpg"
+                    src="https://southland-rp.ru/uploads/monthly_2021_04/large.20210423215412_1.png.06e5c6ca6b5b0d2a8e1dbf7f9981977c.png"
                     style="width: 100%"
                   />
                 </div>
@@ -288,7 +272,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.236147007_DesktopScreenshot2021_06.03-02_11_20_22.png.1f0bff5373b425707f4ebdb39e9abc34.png"
+                    src="https://southland-rp.ru/uploads/monthly_2021_02/large.1508423402_FiveM_GTAProcess2021-02-1803-12-09.png.3175cbf99eaf2a3b81150fffbd218668.png"
                     style="width: 100%"
                   />
                 </div>
@@ -372,7 +356,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.20210610195820_1.jpg.146f533bb153e5f15f30d3cfc0fd14aa.jpg"
+                    src="https://southland-rp.ru/uploads/monthly_2020_11/large.20201127102627_1.png.6610051c93bd9b5c8e998b6b1a936041.png"
                     style="width: 100%"
                   />
                 </div>
@@ -394,7 +378,181 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_02.png.3646cfec848279e845c8cedba0b66621.png"
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.Screenshot_502.png.13cad68f6cbe4cd8337ce2e4e4122249.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </q-carousel-slide>
+        <q-carousel-slide name="lscofd" class="column no-wrap flex-center">
+          <div class="row text-center justify-center q-col-gutter-sm">
+            <div class="col-12 col-md-10 col-lg-9">
+              <div style="display: table; width: 100%;">
+                <div style="width: 150px; display: table-cell; vertical-align: top;">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_03/137182397_LosSantosCountyFireDepartment.png.f6bfea91c7fe2f73dd0178234d70e450.png"
+                    alt=""
+                    style="width: 125px; height: auto;"
+                    class="q-mr-md"
+                  />
+                </div>
+                <div
+                  class="text-left"
+                  style="width: auto; display: table-cell; vertical-align: middle;"
+                >
+                  <span class="text-h5 text-bold">
+                    Los Santos county Fire Department
+                  </span>
+                  <br/>
+                  <span style="font-size: 18px;">
+                    Это пожарно-спасательное управление,
+                    обеспечивающее защиту районов округа Лос-Сантос, а также 58 городов, с
+                    которыми заключены контракты, включая Палето-Бэй, расположенный в округе
+                    Блейн Каунти, который является единственным город за пределами округа.
+                    К нам присоединяются и другие пожарные части, благодаря чему мы можем
+                    предоставлять дополнительную помощь близлежащим округам или городам.
+                    Наш департамент получил свою знаменитость после удачного спасения
+                    сотрудников департамента воды и света в ходе самого большого теракта 2003 года
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="q-mt-xl col-12 col-md-10 col-lg-9 row q-col-gutter-sm text-left">
+              <div class="col-12 row items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span class="text-red">FIREFIGHTER</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Firefighter Division</b> — это основной дивизион пожарного департамента. Наша команда
+                    занимается тушением пожаров на самых разных инцидентах — начиная
+                    от маленьких загородных домов, и заканчивая многоэтажными зданиями
+                    с очень сложными конструкциями, а также пожарами в национальных
+                    парках и лесах, применяя самую разную технику — авиационную,
+                    морскую и сухопутную. В нашем отделе вы сможете стать настоящим
+                    пожарным, на которого будет смотреть вся страна, ведь наш департамент
+                    сотрудничает с крупными медиа-компаниями, такими как Weazel News
+                    и Lifeinvader, которые часто берут у нас интервью после крупных инцидентов
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2020_12/large.161894487_.jpg.30bcb23f7687ad4f480bcec1f431e003.jpg"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#3498db;">PARAMEDIC</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Paramedic Division</b> — дивизион скорой медицинской помощи.
+                    Наш департамент обладает профессиональными парамедиками, которые
+                    могут оказывать помощь в самых разных ситуациях — от острых заболеваний,
+                    до психологической помощи, от остановки кровотечений, до полной госпитализации.
+                    В отделе присутствует различная техника, благодаря чему наш отдел может
+                    участвовать в спасательных операциях на воде и в воздухе. Наши сотрудники
+                    обучены различным приемам и тактикам спасения во время ДТП и крупных пожарах.
+                    Всегда мечтали спасать жизни? Наш дивизион всегда открыт для
+                    опытных сотрудников, присоединяйся к нам!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_04/large.349366264_DesktopScreenshot2021_04.29-01_21_08_13.png.a45bbeebd801cc99c500d5ae99a85f1b.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE AN <span style="color:#e67e22;">URBAN SEARCH & RESCUE</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>URBAN SEARCH & RESCUE</b> — отдел, специализирующийся на поиске людей
+                    в самых различных ситуациях. Только наш департамент обладает командой
+                    опытных спасателей, которые каждый день спасают сотни жизней на тяжелых
+                    инцидентах. На вооружение команды есть самая разная техника — начиная
+                    от крупных поисковых автомобилей, заканчивая спасательными лодками и
+                    авиацией. Наш отдел тесно сотрудничает с отделом воздушных и морских
+                    операций Управления Шерифа Блейн Каунти, благодаря чему нам удается
+                    эффективнее искать пострадавших. Заинтересовались? Мы ждем вас,
+                    начни свою карьеру как опытный спасатель!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_03/large.1917942416_DesktopScreenshot2021_03.25-02_27_13_73.png.781ed9810840719402cc5af0233e1212.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </q-carousel-slide>
+        <q-carousel-slide name="dispatch" class="column no-wrap flex-center">
+          <div class="row text-center justify-center q-col-gutter-sm">
+            <div class="col-12 col-md-10 col-lg-9">
+              <div style="display: table; width: 100%;">
+                <div style="width: 150px; display: table-cell; vertical-align: top;">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_03/ddd2.thumb.png.e67cb87d23f25d4cfa9bb7d6228bc775.png"
+                    alt=""
+                    style="width: 125px; height: auto;"
+                    class="q-mr-md"
+                  />
+                </div>
+                <div
+                  class="text-left"
+                  style="width: auto; display: table-cell; vertical-align: middle;"
+                >
+                  <span class="text-h5 text-bold">
+                    Dispatch Department
+                  </span>
+                  <br/>
+                  <span style="font-size: 18px;">
+                    Это самый главный департамент, контролирующий все радиопередачи
+                    на разных частотах, координирующий пожарных, парамедиков, полицию
+                    и другие службы. Основная обязанность диспетчеров — оказывать помощь
+                    службам экстренной помощи и отвечать на звонки в службу 911. Диспетчер
+                    определяют тип кризиса, место возникновения чрезвычайной ситуации и
+                    отправляют соответствующий ответ с имеющейся в распоряжение технике и
+                    подконтрольных департаментов. Мы должны сообщать точную информацию и
+                    координировать отправку персонала на места происшествия. Быть
+                    диспетчером —  это оказывать помощь в трудную минуту, отвечать
+                    на звонки в 911 и координировать службы между собой
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="q-mt-xl col-12 col-md-10 col-lg-9 row q-col-gutter-sm text-right">
+              <div class="col-12 row reverse items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#3498db;">DISPATCHER</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Dispatcher</b> — контролирует и отслеживают автомобили экстренных служб,
+                    координируют действия с другими местными центрами связи и ведут
+                    подробный учет звонков. Диспетчерская работа - это стресс, так как
+                    мы работаем в течение долгих смен и принимаем множество звонков под
+                    давлением, а также решаем опасные для жизни ситуации. Высокие требования
+                    могут быть утомительными, но и полезными. Вы должны отвечать как можно быстрее
+                    и спокойнее. Решение проблем, критическое мышление и отличные коммуникативные
+                    навыки необходимы для эффективного диспетчера. Все вызовы документируются
+                    и записываются в базу данных, в которых каждый офицер или пожарный может
+                    увидеть — характер происшествия, имя и местонахождение звонящего, особенности ситуации.
+                    Готовы стать диспетчером? Мы ждем вас в нашу команду
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.08-20_35.png.ca4c6ffefc1276c629e2f6a5959fffa5.png"
                     style="width: 100%"
                   />
                 </div>
@@ -402,21 +560,148 @@
               <div class="col-12 row reverse q-mt-md items-center">
                 <div class="col-12 col-md-8 col-lg-9 q-px-lg">
                   <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
-                    BE A <span style="color:#e74c3c;">COMMAND</span>
+                    BE A <span style="color:#16a085;">TRAFFIC DISPATCHER</span>
                   </h4>
                   <span class="q-ma-none" style="font-size: 18px">
-                    <b>Command Unit</b> — дивизион департамента, занимающийся координацией крупных
-                    стихийных инцидентов. Благодаря имеющимся ресурсам, в нашем автопарке
-                    присутствует мобильный командный центр, с помощью которого мы можем
-                    контролировать и координировать действия различных государственных и
-                    гражданских структур, в том числе и помогать в спасение многих жизней.
-                    За время существования нашего отдела, мы смогли спасти десятки тысяч жизней!
-                    Вступай в наш отдел, мы ждем именно тебя!
+                    <b>Traffic Dispatcher</b> — контролирует работу офицеров на остановках с автомобилями,
+                    дает подробную информацию о любом транспортном средстве, и координирует погони
+                    при необходимости. Любое происшествие на дороге не обходится без участия диспетчера,
+                    именно он задает курс работы офицеров и других служб на происшествии и
+                    определяет дальней действия, необходимые для урегулирования сложившейся ситуации.
+                    Благодаря нашей слаженной работе все экстренные службы добираются до инцидента
+                    во время, получают всю необходимую информацию о ситуациях на дороге, и не дают
+                    усугубляться экстренной ситуации. Готовы стать траффик-диспетчером? Мы ждем вас
+                    в нашу команду профессионалов! Начните свой карьерный рост именно в нашем отделе,
+                    станьте экспертом в диспетчерском департаменте
                   </span>
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.236147007_DesktopScreenshot2021_06.03-02_11_20_22.png.1f0bff5373b425707f4ebdb39e9abc34.png"
+                    src="https://southland-rp.ru/uploads/monthly_2021_05/large.unknown4.jpg.4cdb5aa8524701bd04479db7ebc6354a.jpg"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row reverse q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#e74c3c;">911 OPERATOR</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>911 Operator</b> — отвечает на звонки в службу экстренной помощи, и в
+                    соответствии с ситуацией решает — какие государственные службы
+                    потребуются на инциденте. В чрезвычайной ситуации ваш голос первым
+                    слышит нуждающийся, а ваши навыки спасут его жизнь. Мы ищем
+                    высокомотивированных, позитивных и ориентированных на людей
+                    диспетчеров для работы в нашем ультрасовременном колл-центре 9-1-1
+                    — самый загруженный колл-центр в штате. Используйте навыки вопросов
+                    и ответов, чтобы получить конкретную информацию от звонящих, которые
+                    расстроены, напуганы, оскорбительны или ранены, оставаясь при этом
+                    спокойными и эмоционально отстраненными. Заинтересовались?
+                    Мы ждем именно вас, чтобы вы приняли свой первый вызов!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_04/large.301539443_FiveM_GTAProcess2021-04-2122-27-03.jpg.046660095e17be74f7662d09f0ee305b.jpg"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row reverse q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#e67e22;">COORDINATOR</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Coordinator</b> — предоставляет основанную информацию на случившихся катастрофах,
+                    которая помогает распознавать и снижать уязвимости, справляться с последствиями
+                    бедствия и дополнительно разрабатывать планы ликвидации последствий происшествия.
+                    Мы организуем и управляем имеющимися ресурсами и обязанностями по работе со всеми
+                    во время чрезвычайных ситуаций (готовность, реагирование, смягчение последствий и
+                    восстановление). Цель состоит в том, чтобы уменьшить воздействие всех опасностей,
+                    и как можно быстрее спасти невинные жизни. Координатор контролирует все государственные
+                    службы на крупномасштабных инцидентах и распределяет обязанности между всему службами,
+                    чтобы улучшить эффективность проводимых работ
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_05/large_911.jpg.e144e6a5f2ea85406e109e3c235f666f.jpg"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </q-carousel-slide>
+        <q-carousel-slide name="civilian" class="column no-wrap flex-center">
+          <div class="row text-center justify-center q-col-gutter-sm">
+            <div class="col-12 col-md-10 col-lg-9">
+              <div style="display: table; width: 100%;">
+                <div style="width: 150px; display: table-cell; vertical-align: top;">
+                  <img
+                    src="https://i.imgur.com/fKi3IDT.png"
+                    alt=""
+                    style="width: 125px; height: auto;"
+                    class="q-mr-md"
+                  />
+                </div>
+                <div
+                  class="text-left"
+                  style="width: auto; display: table-cell; vertical-align: middle;"
+                >
+                  <span class="text-h5 text-bold">
+                    Civilian Department
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+            <div class="q-mt-xl col-12 col-md-10 col-lg-9 row q-col-gutter-sm text-left">
+              <div class="col-12 row items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE <span class="text-red">WHOEVER YOU WANT</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    Это одна дружная и большая семья, движущая сила всего сообщества!
+                    Ролевая игра в Southland Project означает создание персонажей и
+                    исполнение роли гражданина Сан-Андреаса, независимо от того, являетесь
+                    ли вы законным гражданином, работаете в бизнесе или другой службе,
+                    преступником, зарабатывающим деньги нелегальным путем или работающим
+                    в аварийных службах. Мы поощряем непрерывную ролевую игру, в которой
+                    персонажи заводят друзей, заводят отношения и строят историю
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_05/large.1817409520_.PNG.25df4ab5e84b6e912602b19282ae48a3.PNG"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 q-mt-md row items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE <span class="text-blue">YOUR DREAMS COME TRUE</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    Гражданский департамент является ключевым в создании и отыгровке
+                    различных РП-ситуаций. Наша основанная цель — взаимодействие
+                    с государственными структурами. Индивидуальная база данных,
+                    уникальные модификации и ламповость сообщества дает участникам
+                    создавать интересные ситуации и развивать разных персонажей, не
+                    опираясь на ограничение в валюте или игровом уровне. Гражданский
+                    департамент является одним из самых сложных, поскольку создать
+                    по-настоящему продуманную ситуацию очень сложно, поэтому если
+                    вы умеете создавать уникальный контент и жаждите настоящего РП,
+                    то мы с радостью ждем вас в нашем департаменте!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://i.yapx.ru/PkcHG.png"
                     style="width: 100%"
                   />
                 </div>
@@ -553,14 +838,14 @@ export default defineComponent({
   padding: 0px;
   flex-direction: row;
   &__item {
-    background-color: #596376;
-    border: 2px solid #1f2532;
-    border-radius: 100%;
+    // background-color: #596376;
+    // border: 2px solid #1f2532;
+    // border-radius: 100%;
     color: #ffffff;
     height: 96px;
     width: 96px;
     transition: margin 0.3s ease-in-out;
-    overflow: hidden;
+    // overflow: hidden;
     margin-left: -32px;
     &__first {
       margin-left: 0px;

@@ -9,7 +9,7 @@
             height="250"
           >
         </div>
-        <svg width="320" height="320" viewBox="0 0 40 40">
+        <svg width="600" height="600" viewBox="0 0 40 40">
           <polygon points="0 0 0 40 40 40 40 0" class="rect"></polygon>
         </svg>
       </div>

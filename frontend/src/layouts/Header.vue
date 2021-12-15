@@ -8,11 +8,12 @@
         >
           <div v-morph:logo:mygroup:500.resize="morphGroupModel">
             <img
+              class="q-mt-md"
               :src='
-                "https://media.discordapp.net/attachments/770675271208140800/918982945203712020/logo_krug2.png?width=668&height=676"
+                "https://i.imgur.com/gMY3Cz3.png"
               '
               @click="switchMorph"
-              height="100"
+              height="80"
               v-if="!hideLogo"
             />
           </div>
