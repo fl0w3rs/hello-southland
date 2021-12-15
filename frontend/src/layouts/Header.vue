@@ -6,14 +6,16 @@
           :style='{ transform: `rotate(${rotateDeg}deg)` }'
           class="text-bold brand-text cursor-pointer"
         >
-          <img
-            :src='
-              "https://media.discordapp.net/attachments/770675271208140800/918982945203712020/logo_krug2.png?width=668&height=676"
-            '
-            v-morph:logo:mygroup:500.resize="morphGroupModel"
-            @click="switchMorph"
-            height="100"
-          />
+          <div v-morph:logo:mygroup:500.resize="morphGroupModel">
+            <img
+              :src='
+                "https://media.discordapp.net/attachments/770675271208140800/918982945203712020/logo_krug2.png?width=668&height=676"
+              '
+              @click="switchMorph"
+              height="100"
+              v-if="!hideLogo"
+            />
+          </div>
         </div>
         <div
           v-morph:faq:mygroup:1000.resize="morphGroupModel"
@@ -48,6 +50,7 @@ export default defineComponent({
     const scrollPos = ref(0);
     const rotateStep = (window.innerHeight / 360);
     const rotateDeg = computed(() => scrollPos.value / rotateStep);
+    const hideLogo = ref(false);
 
     const onScroll = () => {
       scrollPos.value = window.scrollY;
@@ -66,7 +69,11 @@ export default defineComponent({
       if (morphGroupModel.value === 'logo') {
         morphGroupModel.value = 'faq';
       } else {
+        hideLogo.value = true; // костыль?)
         morphGroupModel.value = 'logo';
+        setTimeout(() => {
+          hideLogo.value = false;
+        }, 500);
       }
     };
 
@@ -76,6 +83,7 @@ export default defineComponent({
       rotateDeg,
       morphGroupModel,
       switchMorph,
+      hideLogo,
     };
   },
 });

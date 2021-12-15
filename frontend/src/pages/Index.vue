@@ -61,17 +61,43 @@
           При подаче заявки <span class="text-green-6">ты сам выбираешь, кем хочешь стать</span>,
           а <span class="text-cyan-6">в дальнейшем можешь изменить свой выбор</span>.
         </div>
-        <div class="col-12 row q-mt-xl items-center">
-          <div class="col-12 col-md-5">
-            <p class="text-h4 text-bold"><q-icon name="construction"></q-icon> Гражданские</p>
-            <p class="text-h6 q-mb-none">Придумывают и реализуют игровые ситуации</p>
+        <div class="col-12 row q-mt-xl items-center justify-center">
+          <div class="col-12 col-md-6 column items-center aboutUs--images">
+            <img
+              src="https://southland-rp.ru/uploads/monthly_2021_03/large.20210301152822_1.jpg.ace41d8122e74a32067eca113904a958.jpg"
+              style="width: 400px; height: auto"
+            />
+            <img
+              src="https://southland-rp.ru/uploads/monthly_2021_02/large.20210217093008_1.jpg.9db1950a6f52d233ee48086457cacbf7.jpg"
+              style="width: 400px; height: auto"
+            />
+            <img
+              src="https://southland-rp.ru/uploads/monthly_2021_04/large.20210423215412_1.png.06e5c6ca6b5b0d2a8e1dbf7f9981977c.png"
+              style="width: 400px; height: auto"
+            />
           </div>
-          <div class="col-12 col-md-2">
-            <p class="text-h4 text-bold q-mb-none">✚</p>
+          <div class="col-12 col-md-6 column">
+            <div>
+              <p class="text-h4 text-bold q-ma-none">
+                <q-icon name="construction"></q-icon> Гражданские
+              </p>
+              <p class="text-h6 q-ma-none">Придумывают и реализуют игровые ситуации</p>
+            </div>
+            <div class="q-mt-xl">
+              <p class="text-h4 text-bold q-ma-none">
+                <q-icon name="phone"></q-icon> Диспетчерский департамент
+              </p>
+              <p class="text-h6 q-ma-none">Контролируют государственные службы</p>
+            </div>
+            <div class="q-mt-xl">
+              <p class="text-h4 text-bold q-ma-none">
+                <q-icon name="gavel"></q-icon> Государственные службы
+              </p>
+              <p class="text-h6 q-ma-none">Решают полученные ситуации</p>
+            </div>
           </div>
           <div class="col-12 col-md-5">
-            <p class="text-h4 text-bold"><q-icon name="gavel"></q-icon> Государственные службы</p>
-            <p class="text-h6 q-mb-none">Решают полученные ситуации</p>
+
           </div>
         </div>
       </div>
@@ -105,141 +131,175 @@
       class="q-pa-md row justify-center items-center"
       :style='{ minHeight: `${sectionHeight}px` }'
     >
-      <div class="row text-center justify-center q-col-gutter-sm">
-        <div class="col-12 col-md-10 col-lg-9">
-          <div style="display: table; width: 100%;">
-            <div style="width: 150px; display: table-cell; vertical-align: top;">
-              <img
-                src="https://southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.thumb.png.e2519e6492c1e511ae6cb3a51ca1dda4.png"
-                alt=""
-                style="width: 125px; height: auto;"
-                class="q-mr-md"
-              />
+      <q-carousel
+        v-model="carouselSlide"
+        transition-prev="jump-right"
+        transition-next="jump-left"
+        swipeable
+        animated
+        control-color="white"
+        navigation
+        padding
+        arrows
+        height="auto"
+        class="bg-transparent full-width full-height"
+      >
+        <q-carousel-slide name="lspd" class="column no-wrap flex-center">
+          <div class="row text-center justify-center q-col-gutter-sm">
+            <div class="col-12 col-md-10 col-lg-9">
+              <div style="display: table; width: 100%;">
+                <div style="width: 150px; display: table-cell; vertical-align: top;">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.thumb.png.e2519e6492c1e511ae6cb3a51ca1dda4.png"
+                    alt=""
+                    style="width: 125px; height: auto;"
+                    class="q-mr-md"
+                  />
+                </div>
+                <div
+                  class="text-left"
+                  style="width: auto; display: table-cell; vertical-align: middle;"
+                >
+                  <span class="text-h5 text-bold">
+                    Los Santos Police Department & Blaine County Sheriff's Office
+                  </span>
+                  <br/>
+                  <span style="font-size: 18px;">
+                    Это объединение  двух государственных ведомств,
+                    созданное для улучшения атмосферы на нашем проекте.
+                    Два департамента занимаются контролем за соблюдением
+                    правосудия на территории всего штата.
+                    Нашей первостепенной задачей является создание крепких взаимоотношений
+                    для дальнейшего сотрудничества в области правопорядка.
+                    В наших департаментах находится множество отделов,
+                    которые специализируются на узком спектре задач.
+                    Мы ждем каждого, кто предан своей стране,
+                    готов защищать законы и заинтересован в сохранении правосудия в нашем штате.
+                  </span>
+                </div>
+              </div>
             </div>
-            <div
-              class="text-left"
-              style="width: auto; display: table-cell; vertical-align: middle;"
-            >
-              <span class="text-h5 text-bold">
-                Los Santos Police Department & Blaine County Sheriff's Office
-              </span>
-              <br/>
-              <span>
-                Это объединение
-                двух государственных ведомств, созданное для улучшения атмосферы на нашем проекте.
-                Два департамента занимаются контролем за соблюдением правосудия на территории
-                всего штата.
-                Нашей первостепенной задачей является создание крепких взаимоотношений
-                для дальнейшего
-                сотрудничества в области правопорядка. В наших департаментах находится множество
-                отделов,
-                которые специализируются на узком спектре задач. Мы ждем каждого, кто предан своей
-                стране,
-                готов защищать законы и заинтересован в сохранении правосудия в нашем штате.
-              </span>
+            <div class="q-mt-xl col-12 col-md-10 col-lg-9 row q-col-gutter-sm text-left">
+              <div class="col-12 row items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#f1c40f">PATROL UNIT</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Patrol Division</b> — основной дивизион полицейского департамента,
+                    которое вы получите при вступлении в наш департамент. Задача
+                    нашего отдела — контроль
+                    и соблюдение правил дорожного движения на территории дорог штата.
+                    Большую часть времени вы будете находиться с напарником, патрулируя
+                    различные территории, предотвращая совершения преступления и помогая
+                    населению в их проблемах. Мы ждем каждого, кто заинтересован в соблюдение
+                    правопорядка в нашем штате, вступайте в наш отдел, мы ждем именно вас!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_09.png.996b5cc8f2d9590cf3ce53fac748f754.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#2ecc71;">RANGER</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Park Ranger</b> — являются основным органом по обеспечению соблюдения законов
+                    о дикой природе в штате Сан-Андреас. На наш отдел возложена большая
+                    миссия — сохранение экологической и исторической целостности парковых зон,
+                    обеспечение безопасности посетителей, доступности для общественного
+                    пользования парковых зон, мониторинг популяции вымирающих животных,
+                    контроль разрешений на оружие для охоты и соблюдение правил охоты
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_02.png.3646cfec848279e845c8cedba0b66621.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#2980b9">METRO OFFICER</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Metropolitan Division</b> — специальный дивизион нашего департамента.
+                    SWAT – элитное подразделение в каждом полицейском департаменте.
+                    Служить в нем большая честь для офицеров местной полиции.
+                    Ежегодно несколько сотен сотрудников подают рапорта с просьбой
+                    получить право пройти отборочные испытания, чтобы вступить в команду.
+                    Потенциальный кандидат в спецназ должен проработать в полиции должен
+                    обладать важными качествами, такими как: коммуникабельность,
+                    крепкий характер и умение работать с командой. Важно чтобы в
+                    вашем послужном списке не было неснятых взысканий, иначе путь в
+                    нашу команду для вас закрыт. После этого офицера включают в список
+                    кандидатов для сдачи физического теста. Цель SWAT — обеспечение защиты
+                    поддержки, охраны, огневой мощи и спасения
+                    в ходе полицейских операций в ситуациях
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.20210610195820_1.jpg.146f533bb153e5f15f30d3cfc0fd14aa.jpg"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#e67e22;">DETECTIVE</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Detective Bureau</b> — расcледуют преступления путем сбора доказательств
+                    и фактов.
+                    Детектив работает над сбором доказательств и фактов по уголовным делам.
+                    Обязанности включают собеседование с потенциальными подозреваемыми,
+                    изучение записей и задержание преступников. Эти полицейские будут работать
+                    над конкретными делами, пока они не будут решены или не будут удалены.
+                    Для полицейских детективов важно вести надлежащие записи и записи в случае,
+                    если им необходимо давать показания в суде. Общеизвестно, что детективы должны
+                    быть привлечены к суду в качестве свидетеля или давать показания. Другие
+                    обязанности могут включать в себя координацию на месте преступления, сбор
+                    доказательств на месте преступления и сбор доказательств от подозреваемых
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.236147007_DesktopScreenshot2021_06.03-02_11_20_22.png.1f0bff5373b425707f4ebdb39e9abc34.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="q-mt-xl col-12 col-md-10 col-lg-9 row q-col-gutter-sm text-left">
-          <div class="col-12 row items-center">
-            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
-              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
-                BE A <span style="color:#f1c40f">PATROL UNIT</span>
-              </h4>
-              <span class="q-ma-none" style="font-size: 18px">
-                <b>Patrol Division</b> — основной дивизион полицейского департамента,
-                которое вы получите при вступлении в наш департамент. Задача
-                нашего отдела — контроль
-                и соблюдение правил дорожного движения на территории дорог штата.
-                Большую часть времени вы будете находиться с напарником, патрулируя
-                различные территории, предотвращая совершения преступления и помогая
-                населению в их проблемах. Мы ждем каждого, кто заинтересован в соблюдение
-                правопорядка в нашем штате, вступайте в наш отдел, мы ждем именно вас!
-              </span>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-              <img
-                src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_09.png.996b5cc8f2d9590cf3ce53fac748f754.png"
-                style="width: 100%"
-              />
-            </div>
+        </q-carousel-slide>
+        <q-carousel-slide name="tv" class="column no-wrap flex-center">
+          <q-icon name="live_tv" size="56px" />
+          <div class="q-mt-md text-center">
+            j
           </div>
-          <div class="col-12 row q-mt-md items-center">
-            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
-              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
-                BE A <span style="color:#2ecc71;">RANGER</span>
-              </h4>
-              <span class="q-ma-none" style="font-size: 18px">
-                <b>Park Ranger</b> — являются основным органом по обеспечению соблюдения законов
-                о дикой природе в штате Сан-Андреас. На наш отдел возложена большая
-                миссия — сохранение экологической и исторической целостности парковых зон,
-                обеспечение безопасности посетителей, доступности для общественного
-                пользования парковых зон, мониторинг популяции вымирающих животных,
-                контроль разрешений на оружие для охоты и соблюдение правил охоты
-              </span>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-              <img
-                src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_02.png.3646cfec848279e845c8cedba0b66621.png"
-                style="width: 100%"
-              />
-            </div>
+        </q-carousel-slide>
+        <q-carousel-slide name="layers" class="column no-wrap flex-center">
+          <q-icon name="layers" size="56px" />
+          <div class="q-mt-md text-center">
+            h
           </div>
-          <div class="col-12 row q-mt-md items-center">
-            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
-              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
-                BE A <span style="color:#2980b9">METRO OFFICER</span>
-              </h4>
-              <span class="q-ma-none" style="font-size: 18px">
-                <b>Metropolitan Division</b> — специальный дивизион нашего департамента.
-                SWAT – элитное подразделение в каждом полицейском департаменте.
-                Служить в нем большая честь для офицеров местной полиции.
-                Ежегодно несколько сотен сотрудников подают рапорта с просьбой
-                получить право пройти отборочные испытания, чтобы вступить в команду.
-                Потенциальный кандидат в спецназ должен проработать в полиции должен
-                обладать важными качествами, такими как: коммуникабельность,
-                крепкий характер и умение работать с командой. Важно чтобы в
-                вашем послужном списке не было неснятых взысканий, иначе путь в
-                нашу команду для вас закрыт. После этого офицера включают в список
-                кандидатов для сдачи физического теста. Цель SWAT — обеспечение защиты
-                поддержки, охраны, огневой мощи и спасения в ходе полицейских операций в ситуациях
-              </span>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-              <img
-                src="https://southland-rp.ru/uploads/monthly_2021_06/large.20210610195820_1.jpg.146f533bb153e5f15f30d3cfc0fd14aa.jpg"
-                style="width: 100%"
-              />
-            </div>
+        </q-carousel-slide>
+        <q-carousel-slide name="map" class="column no-wrap flex-center">
+          <q-icon name="terrain" size="56px" />
+          <div class="q-mt-md text-center">
+            g
           </div>
-          <div class="col-12 row q-mt-md items-center">
-            <div class="col-12 col-md-8 col-lg-9 q-px-lg">
-              <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
-                BE A <span style="color:#e67e22;">DETECTIVE</span>
-              </h4>
-              <span class="q-ma-none" style="font-size: 18px">
-                <b>Detective Bureau</b> — расcледуют преступления путем сбора доказательств
-                и фактов.
-                Детектив работает над сбором доказательств и фактов по уголовным делам.
-                Обязанности включают собеседование с потенциальными подозреваемыми,
-                изучение записей и задержание преступников. Эти полицейские будут работать
-                над конкретными делами, пока они не будут решены или не будут удалены.
-                Для полицейских детективов важно вести надлежащие записи и записи в случае,
-                если им необходимо давать показания в суде. Общеизвестно, что детективы должны
-                быть привлечены к суду в качестве свидетеля или давать показания. Другие
-                обязанности могут включать в себя координацию на месте преступления, сбор
-                доказательств на месте преступления и сбор доказательств от подозреваемых
-              </span>
-            </div>
-            <div class="col-12 col-md-4 col-lg-3">
-              <img
-                src="https://southland-rp.ru/uploads/monthly_2021_06/large.236147007_DesktopScreenshot2021_06.03-02_11_20_22.png.1f0bff5373b425707f4ebdb39e9abc34.png"
-                style="width: 100%"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+        </q-carousel-slide>
+      </q-carousel>
     </div>
 
     <b class="fancy-splitter"></b>
@@ -319,7 +379,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { scroll } from 'quasar';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
@@ -336,9 +396,12 @@ export default defineComponent({
       scrollToElement(document.getElementById('joinUsSection')!);
     };
 
+    const carouselSlide = ref('lspd');
+
     return {
       sectionHeight: window.innerHeight,
       scrollToJoinSection,
+      carouselSlide,
     };
   },
 });
@@ -403,14 +466,27 @@ export default defineComponent({
   letter-spacing: normal;
 }
 
-.es__title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  border-bottom: 2px solid #fff;
-}
-
-.es__desc {
-  font-size: 1rem;
+.aboutUs--images {
+  & > img {
+    border-radius: 5px;
+    &:first-child {
+      margin-bottom: -1.875rem;
+      transform: rotate(10deg);
+      z-index: 0;
+    }
+    &:nth-child(2) {
+      z-index: 1;
+    }
+    &:nth-child(3) {
+      margin-top: -3.75rem;
+      margin-bottom: 3.75rem;
+      transform: rotate(15deg);
+      z-index: 0;
+    }
+    &:hover {
+      z-index: 2;
+    }
+  }
 }
 
 $barsize: 15px;
