@@ -281,22 +281,132 @@
             </div>
           </div>
         </q-carousel-slide>
-        <q-carousel-slide name="tv" class="column no-wrap flex-center">
-          <q-icon name="live_tv" size="56px" />
-          <div class="q-mt-md text-center">
-            j
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="layers" class="column no-wrap flex-center">
-          <q-icon name="layers" size="56px" />
-          <div class="q-mt-md text-center">
-            h
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="map" class="column no-wrap flex-center">
-          <q-icon name="terrain" size="56px" />
-          <div class="q-mt-md text-center">
-            g
+        <q-carousel-slide name="sahp" class="column no-wrap flex-center">
+          <div class="row text-center justify-center q-col-gutter-sm">
+            <div class="col-12 col-md-10 col-lg-9">
+              <div style="display: table; width: 100%;">
+                <div style="width: 150px; display: table-cell; vertical-align: top;">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_04/523595685_SanAndreasHighwayPatrol.thumb.png.0d0f44fe380287f2e5b88b8d4c0813d9.png"
+                    alt=""
+                    style="width: 125px; height: auto;"
+                    class="q-mr-md"
+                  />
+                </div>
+                <div
+                  class="text-left"
+                  style="width: auto; display: table-cell; vertical-align: middle;"
+                >
+                  <span class="text-h5 text-bold">
+                    San Andreas Highway Patrol
+                  </span>
+                  <br/>
+                  <span style="font-size: 18px;">
+                    Это департамент, обеспечивающий контроль соблюдения
+                    правил дорожного движения на автомагистралях штата и
+                    межгосударственных скоростных автомагистралях, а также
+                    надзор за безопасностью государственных зданий. Офицеры
+                    дорожного патруля отвечают за расследование и устранение
+                    дорожно-транспортных происшествий. Офицеры обеспечивают
+                    соблюдение автомобильного кодекса штата, преследуют беглецов,
+                    замеченных на автомагистралях. Наш департамент смог предотвратить
+                    сотни тысяч преступлений, и мы гордимся нашими достижениями
+                    в области государственных структур
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="q-mt-xl col-12 col-md-10 col-lg-9 row q-col-gutter-sm text-right">
+              <div class="col-12 row reverse items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#f1c40f">TROOPER</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Patrol Division</b> — основной дивизион нашего департамента, которое
+                    вы получите при вступлении. Задача нашего отдела — контроль и
+                    соблюдение правил дорожного движения на территории всех дорог
+                    штата. Большую часть времени вы будете находиться с напарником,
+                    патрулируя различные территории, предотвращая совершения
+                    преступления на дорогах, помогать гражданским лицам и другим
+                    государственным службам. Мы заинтересованы именно в
+                    вашей кандидатуре! Вступай уже сегодня!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_09.png.996b5cc8f2d9590cf3ce53fac748f754.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row reverse q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE AN <span style="color:#3498db;">AIR & COASTAL</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Air & Costal Division</b> — дополнительные дивизион департамента,
+                    наше подразделение занимается патрулированием, поисками и спасением
+                    людей на воде, земле и в воздухе. Мы имеем штат высококвалифицированных
+                    офицеров которые готовы помочь вам в любой момент. Ежегодно
+                    наши экипажи предотвращают трагедии, спасая сотни жизней. Мы
+                    являемся самым крупным подразделением департамента, успешно
+                    выполняющее воздушные и водные операции на территории нашего штата
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.20210610195820_1.jpg.146f533bb153e5f15f30d3cfc0fd14aa.jpg"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row reverse q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#e67e22;">DUI OFFICER</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>DUI Control Division</b> — дивизион департамента, занимающийся
+                    контролем состоянием водителей на дорогах нашего штата. Наше подразделение
+                    часто устанавливаем DUI-чекпоинты, где проводит мероприятие по
+                    заблаговременному предотвращению происшествий. Мы помогаем сдерживать
+                    и предотвращать распространение нелегальной наркотической и алкогольной
+                    продукции, а также незаконной иммиграцией из других стран. Наш отдел
+                    ищет самых высококвалифицированных сотрудников, стань частью нашего дивизиона!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_02.png.3646cfec848279e845c8cedba0b66621.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+              <div class="col-12 row reverse q-mt-md items-center">
+                <div class="col-12 col-md-8 col-lg-9 q-px-lg">
+                  <h4 style="font-size: 48px" class="text-bold q-ma-none q-mb-md">
+                    BE A <span style="color:#e74c3c;">COMMAND</span>
+                  </h4>
+                  <span class="q-ma-none" style="font-size: 18px">
+                    <b>Command Unit</b> — дивизион департамента, занимающийся координацией крупных
+                    стихийных инцидентов. Благодаря имеющимся ресурсам, в нашем автопарке
+                    присутствует мобильный командный центр, с помощью которого мы можем
+                    контролировать и координировать действия различных государственных и
+                    гражданских структур, в том числе и помогать в спасение многих жизней.
+                    За время существования нашего отдела, мы смогли спасти десятки тысяч жизней!
+                    Вступай в наш отдел, мы ждем именно тебя!
+                  </span>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                  <img
+                    src="https://southland-rp.ru/uploads/monthly_2021_06/large.236147007_DesktopScreenshot2021_06.03-02_11_20_22.png.1f0bff5373b425707f4ebdb39e9abc34.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </q-carousel-slide>
       </q-carousel>
