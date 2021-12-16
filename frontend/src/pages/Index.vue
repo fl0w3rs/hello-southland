@@ -736,47 +736,7 @@
           Вступление в сообщество происходит в 5 этапов.
         </div>
         <div class="col-12 col-md-9 col-lg-7 q-mt-sm">
-          <q-stepper
-            ref="stepper"
-            color="primary"
-            :vertical="$q.platform.is.mobile"
-            animated
-          >
-            <q-step
-              :name="1"
-              title="Регистрация"
-              icon="edit"
-            >
-            </q-step>
-
-            <q-step
-              :name="2"
-              title="Подача заявки"
-              icon="article"
-            >
-            </q-step>
-
-            <q-step
-              :name="3"
-              title="Интервью"
-              icon="mic"
-            >
-            </q-step>
-
-            <q-step
-              :name="4"
-              title="Тестирование"
-              icon="quiz"
-            >
-            </q-step>
-
-            <q-step
-              :name="5"
-              title="Обучение"
-              icon="school"
-            >
-            </q-step>
-          </q-stepper>
+          <join-us-stepper />
         </div>
         <div class="col-12 text-white text-center text-h6 q-mt-xl">
           Чтобы просмотреть более подробную информацию, нажмите кнопку ниже.
@@ -791,6 +751,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { scroll } from 'quasar';
+import JoinUsStepper from 'src/components/joinUs/Stepper.vue';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
@@ -801,6 +762,9 @@ function scrollToElement(el: HTMLElement) {
 
 export default defineComponent({
   name: 'PageIndex',
+  components: {
+    JoinUsStepper,
+  },
   setup() {
     const scrollToJoinSection = () => {
       scrollToElement(document.getElementById('joinUsSection')!);
@@ -904,71 +868,5 @@ export default defineComponent({
       z-index: 2;
     }
   }
-}
-
-$barsize: 15px;
-$bg: #121212;
-
-.fancy-splitter {
-
-    width: 100%;
-    height: 1px;
-    display: block;
-    position: relative;
-    margin-bottom: 0em;
-    padding: 2em 0;
-
-    &:after,
-    &:before {
-
-        content: "";
-        position: absolute;
-
-        width: 100%;
-        height: 1px;
-        bottom: 50%;
-        left: 0;
-
-    }
-
-    &:before {
-
-        background: linear-gradient( 90deg, $bg 0%, $bg 50%, transparent 50%, transparent 100% );
-        background-size: $barsize;
-        background-position: center;
-        z-index: 1;
-
-    }
-
-    &:after {
-
-        transition: opacity 0.3s ease, animation 0.3s ease;
-
-        background: linear-gradient(
-            to right,
-            #62efab 5%,
-            #F2EA7D 15%,
-            #F2EA7D 25%,
-            #FF8797 35%,
-            #FF8797 45%,
-            #e1a4f4 55%,
-            #e1a4f4 65%,
-            #82fff4 75%,
-            #82fff4 85%,
-            #62efab 95%);
-
-        background-size: 200%;
-        background-position: 0%;
-        animation: bar 15s linear infinite;
-
-    }
-
-    @keyframes bar {
-
-        0% { background-position: 0%; }
-        100% { background-position: 200%; }
-
-    }
-
 }
 </style>

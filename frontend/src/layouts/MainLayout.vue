@@ -57,6 +57,9 @@
 </template>
 
 <style>
+.animated.slideOutUp {
+  --animate-duration: 1s;
+}
 
 .brand-text {
   letter-spacing: 2.3px;
