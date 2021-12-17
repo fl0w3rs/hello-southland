@@ -136,7 +136,7 @@
             <img src="https://southland-rp.ru/uploads/monthly_2021_04/523595685_SanAndreasHighwayPatrol.thumb.png.0d0f44fe380287f2e5b88b8d4c0813d9.png" alt="">
           </a>
           <a href="#" class="dlogos__item">
-            <img src="https://southland-rp.ru/uploads/monthly_2021_03/137182397_LosSantosCountyFireDepartment.png.f6bfea91c7fe2f73dd0178234d70e450.png" alt="">
+            <img src="https://southland-rp.ru/uploads/monthly_2021_12/984204028_LosSantosCountyFireDepartment.png.15f7cb4b9b10a7042470fa44865c56ca.png" alt="">
           </a>
           <a href="#" class="dlogos__item">
             <img src="https://southland-rp.ru/uploads/monthly_2021_03/ddd2.thumb.png.e67cb87d23f25d4cfa9bb7d6228bc775.png" alt="">

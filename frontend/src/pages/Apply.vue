@@ -1,27 +1,5 @@
 <template>
   <q-page>
-    <q-parallax
-      :height="sectionHeight / 2"
-      src="https://southland-rp.ru/uploads/monthly_2020_11/large.2423dsada.jpg.13fc66b7aadde1f0a05515abbd63d36c.jpg"
-    >
-    <div
-      class="q-pa-md column justify-center items-center">
-      <span class="text-h2 text-bold text-orange">JOIN US!</span>
-      <span class="text-h4 text-weight-medium q-mt-md">Стань частью нашего сообщества и воплоти свою мечту.</span>
-    </div>
-    </q-parallax>
-    <div
-      class="q-pa-md column justify-center items-center q-pa-xl"
-      :style='{ minHeight: `${sectionHeight/2}px` }'
-    >
-      <span class="text-h6 text-center">
-        <p class="q-ma-none">Статус приёма заявок на данный момент - <span class="text-red text-bold">закрыт</span>.</p>
-        <p class="q-ma-none text-orange-6">Следующее открытие планируется <b>20 августа</b>.</p>
-        <p class="q-ma-none q-mt-md">Периодически наше сообщество открывает приём заявок для тех, кто заинтересован во вступлении.</p>
-        <p>Каждая заявка проходит следующие этапы:</p>
-      </span>
-      <join-us-stepper />
-    </div>
     <div
       class="bg-dark q-pa-md column justify-center items-center q-pa-xl"
       :style='{ minHeight: `${sectionHeight}px` }'
@@ -59,13 +37,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useQuasar } from 'quasar';
-import JoinUsStepper from 'src/components/joinUs/Stepper.vue';
 
 export default defineComponent({
   // name: 'PageName'
-  components: {
-    JoinUsStepper,
-  },
+  components: {},
   setup() {
     const $q = useQuasar();
 
