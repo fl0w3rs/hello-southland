@@ -1,10 +1,13 @@
 import { MutationTree } from 'vuex';
 import { MainStateInterface } from './state';
-import { api } from 'boot/axios';
 
 const mutation: MutationTree<MainStateInterface> = {
-  async doAuth(state: MainStateInterface) {
-    
+  setAuth(state: MainStateInterface, payload: Record<string, any>) {
+    state.auth = payload;
+  },
+
+  setApplyInfo(state: MainStateInterface, payload: Record<string, any>) {
+    state.applyInfo = payload;
   },
 };
 

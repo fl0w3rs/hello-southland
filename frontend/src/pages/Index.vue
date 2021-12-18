@@ -23,7 +23,7 @@
               text-bold text-h5
             " style="display:inline-block"
           >
-            Статус приёма заявок: <span class="text-red-8">закрыт</span>
+            Статус приёма заявок: <span class="text-green-6" v-if="applyInfo().status">открыт</span><span class="text-red-8" v-else>закрыт</span>
             <br/>
             <q-btn
               outline size="lg" color="light" icon="help_outline"
@@ -724,12 +724,12 @@
           <p class="section-label text-white">Хочешь попробовать?</p>
         </div>
         <div class="col-12 text-grey-6 text-center text-h6">
-          На данный момент статус приёма заявок - <span class="text-red-6">закрыт</span>.
+          На данный момент статус приёма заявок - <span class="text-green-6" v-if="applyInfo().status">открыт</span><span class="text-red-6" v-else>закрыт</span>.
           <br/>
-          <span class="text-white">
-            Следующее открытие заявок запланировано на 20-е числа августа.
+          <span class="text-white" v-if="applyInfo().openDate?.length > 0">
+            Следующий приём заявок запланирован на {{applyInfo().openDate}}.
           </span>
-          <br/>
+          <br v-if="applyInfo().openDate?.length > 0"/>
           Процесс вступления может показаться трудным, но
           <span class="text-warning">на самом деле в этом нет ничего сложного</span>.
           <br/>
@@ -738,10 +738,8 @@
         <div class="col-12 col-md-9 col-lg-7 q-mt-sm">
           <join-us-stepper />
         </div>
-        <div class="col-12 text-white text-center text-h6 q-mt-xl">
-          Чтобы просмотреть более подробную информацию, нажмите кнопку ниже.
-          <br/>
-          <q-btn outline color="green" class="q-mt-md" size="lg" label="Попробуем"></q-btn>
+        <div class="col-12 text-white text-center text-h6 q-mt-lg">
+          <q-btn outline color="green" class="q-mt-md" size="lg" label="Попробуем" to="/apply"></q-btn>
         </div>
       </div>
     </div>
@@ -752,6 +750,7 @@
 import { defineComponent, ref } from 'vue';
 import { scroll } from 'quasar';
 import JoinUsStepper from 'src/components/joinUs/Stepper.vue';
+import { mapGetters } from 'vuex';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
@@ -783,6 +782,10 @@ export default defineComponent({
       carouselSlide,
       scrollCallback,
       scrollPosition,
+
+      ...mapGetters({
+        applyInfo: 'main/getApplyInfo',
+      }),
     };
   },
 });

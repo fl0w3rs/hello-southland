@@ -1,10 +1,12 @@
 export interface MainStateInterface {
-  prop: boolean;
+  auth: Record<string, any>;
+  applyInfo: Record<string, any>;
 }
 
 function state(): MainStateInterface {
   return {
-    prop: false,
+    auth: {},
+    applyInfo: {},
   };
 }
 

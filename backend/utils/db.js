@@ -57,6 +57,39 @@ const hello = {
   }),
 };
 
+hello.Settings = hello.db.define('settings',
+  {
+    s_key: {
+      type: DataTypes.STRING(65),
+      primaryKey: true,
+    },
+    s_value: {
+      type: DataTypes.STRING(255),
+    },
+  },
+  {
+    tableName: 'settings',
+  }
+);
+
+hello.Application = hello.db.define('applications',
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    userId: DataTypes.INTEGER,
+    fields: DataTypes.JSON,
+    values: DataTypes.JSON,
+    status: DataTypes.STRING(32),
+  }, {
+    tableName: 'applications'
+  }
+)
+
+// hello.Application.sync();
+
 module.exports = {
   forum,
   hello,
