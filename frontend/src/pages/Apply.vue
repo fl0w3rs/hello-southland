@@ -28,47 +28,16 @@
       </div>
       <div class="col-12 col-md-10 col-lg-8 relative-position">
         <q-form
-          @submit="onSubmit"
-          @reset="onReset"
+          @submit="onFormSubmit"
+          @reset="onFormReset"
           class="q-gutter-md"
         >
-          <q-input
-            filled
-            v-model="form.name"
-            label="Имя и фамилия *"
-            lazy-rules
-            :rules="[ val => val && val.length > 0 || 'Введите имя и фамилию']"
-          />
+          <render-fields :fields="fields" :form="form" @onUpdate="updateForm" />
 
-          <q-input
-            filled
-            type="number"
-            v-model="form.age"
-            label="Ваш возраст *"
-            lazy-rules
-            :rules="[
-              val => val !== null && val !== '' || 'Введите возраст',
-            ]"
+          <q-toggle
+            v-model="checkBoxes.ageAccepted" label="Я подтверждаю, что мой возраст равен или более 15 лет"
           />
-
-          <q-input
-            filled
-            v-model="form.name"
-            label="Какой-то длинный вопрос *"
-            lazy-rules
-            type="textarea"
-            :rules="[ val => val && val.length > 0 || 'Введите ответ на вопрос']"
-          />
-
-          <q-select
-            filled
-            v-model="form.departments"
-            :options="['LSPD&BCSO', 'SAHP', 'FD', 'Гражданский департамент', 'Диспетчерский департамент']"
-            label="Выберите, в какие департаменты вы хотите попасть"
-            :rules="[ val => val && val.length > 0 || 'Выберите хотя бы один департамент']"
-          />
-
-          <q-toggle v-model="form.rulesAccepted" label="Я прочитал правила и согласен с ними" />
+          <q-toggle v-model="checkBoxes.rulesAccepted" label="Я прочитал Правила сообщества и Политику конфиденциальности и согласен с ними" />
 
           <div>
             <q-btn label="Отправить" type="submit" color="primary"/>
@@ -87,6 +56,7 @@
         row-key="id"
         dark
         color="amber"
+        @row-click="openApplication"
       />
     </div>
   </q-page>
@@ -96,9 +66,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import { defineComponent, ref } from 'vue';
-import { useQuasar, date, scroll } from 'quasar';
+import { defineComponent, ref, onBeforeMount } from 'vue';
+import { date, scroll, useQuasar } from 'quasar';
 import { api } from 'boot/axios';
+import { useRouter } from 'vue-router';
+import RenderFields from '../components/RenderFields.vue';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
@@ -109,9 +81,10 @@ function scrollToElement(el: HTMLElement) {
 
 export default defineComponent({
   // name: 'PageName'
-  components: {},
+  components: { RenderFields },
   setup() {
     const $q = useQuasar();
+    const router = useRouter();
 
     const scrollToApplications = () => {
       scrollToElement(document.getElementById('applicationsSection')!);
@@ -122,51 +95,105 @@ export default defineComponent({
         text: 'Обрабатывается',
         classes: 'text-orange',
       },
-    };
-
-    const canApply = ref({});
-    const myApplications = ref([]);
-
-    void api.get('canApply').then((resp: Record<string, any>) => {
-      canApply.value = resp?.data;
-    });
-
-    void api.get('getMyApplications').then((resp: Record<string, Record<string, any>>) => {
-      myApplications.value = resp.data.list || [];
-    });
-
-    const fields = ref([
-      {
-        label: 'Имя и фамилия',
-        type: 'text',
-
+      accepted: {
+        text: 'Одобрена',
+        classes: 'text-green',
       },
-    ]);
+      declined: {
+        text: 'Отклонена',
+        classes: 'text-red-4',
+      },
+    } as Record<string, Record<string, string>>;
 
-    const apply = () => {
-      $q.notify({
-        type: 'negative',
-        message: 'Вы не авторизованы на форуме.',
+    const canApply = ref({ status: false, reason: 'Не получен ответ от бэкенда.' });
+    const myApplications = ref<unknown[]>([]);
+
+    const updateCanApply = () => {
+      void api.get('canApply').then((resp: Record<string, any>) => {
+        canApply.value = resp?.data;
       });
     };
 
-    const form = ref({
-      rulesAccepted: false,
-      age: null,
+    const updateMyApplications = () => {
+      void api.get('getMyApplications').then((resp) => {
+        const data = resp.data as { list: unknown[] };
+        myApplications.value = data.list || [];
+      });
+    };
+
+    onBeforeMount(updateCanApply);
+    onBeforeMount(updateMyApplications);
+
+    const fields = ref([]);
+
+    onBeforeMount(() => {
+      void api.get('getApplicationFields').then((resp) => {
+        fields.value = resp.data.fields || [];
+      });
     });
+
+    const checkBoxes = ref({
+      rulesAccepted: false, ageAccepted: false,
+    });
+
+    const form = ref({});
+
+    const onFormReset = () => {
+      form.value = {};
+    };
+
+    const onFormSubmit = () => {
+      if (!checkBoxes.value.rulesAccepted || !checkBoxes.value.ageAccepted) {
+        return $q.notify({
+          type: 'negative',
+          message: 'Вы не можете подать заявку, не согласившись с Правилами сообщества/Политикой конфиденциальности.',
+        });
+      }
+
+      void api.post('sendApplication', {
+        form: form.value,
+      }).then((resp) => {
+        if (resp.data.status === 'success') {
+          updateCanApply();
+          updateMyApplications();
+
+          $q.notify({
+            type: 'positive',
+            message: 'Заявка успешно отправлена.',
+          });
+
+          onFormReset();
+        }
+      });
+
+      return true;
+    };
+
+    const openApplication = (ev: unknown, row: Record<string, string>) => {
+      void router.push({ path: `/application/${row.id}` });
+    };
+
+    const updateForm = (val: Record<string, any>) => {
+      form.value = val;
+    };
 
     return {
       sectionHeight: window.innerHeight,
-      apply,
 
       form,
+      onFormSubmit,
+      onFormReset,
 
       fields,
       canApply,
       myApplications,
       scrollToApplications,
 
+      openApplication,
+      updateForm,
+
       statusList,
+      checkBoxes,
 
       applicationListColumns: [
         {
@@ -176,21 +203,24 @@ export default defineComponent({
           name: 'createdAt',
           label: 'Дата создания',
           field: 'createdAt',
-          format: (val) => date.formatDate(val, 'YYYY-MM-DD HH:mm:ss'),
+          format: (val: string) => date.formatDate(val, 'YYYY-MM-DD HH:mm:ss'),
+          align: 'center',
         },
         {
           name: 'updatedAt',
           label: 'Дата обновления',
           field: 'updatedAt',
-          format: (val) => date.formatDate(val, 'YYYY-MM-DD HH:mm:ss'),
+          format: (val: string) => date.formatDate(val, 'YYYY-MM-DD HH:mm:ss'),
+          align: 'center',
         },
         {
           name: 'status',
           label: 'Статус',
           field: 'status',
-          classes: (row) => statusList[row.status].classes || '',
-          format: (val) => statusList[val].text || val,
+          classes: (row: Record<string, any>) => statusList[row.status].classes || '',
+          format: (val: string) => statusList[val].text || val,
           class: 'text-bold',
+          align: 'center',
         },
       ],
     };
