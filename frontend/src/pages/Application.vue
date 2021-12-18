@@ -62,7 +62,8 @@ background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
             :name="comment.isAdmin ? authInfo().isAdmin ? `SouthLAnd Project (${comment.userName})` : 'SouthLAnd Project' : comment.userName"
             :text="[ comment.text ]"
             :sent="authInfo().userId == comment.userId"
-            :avatar="comment.isAdmin ? 'https://i.imgur.com/gMY3Cz3.png' : undefined"
+            :avatar="comment.isAdmin ? 'https://i.imgur.com/gMY3Cz3.png' : (comment?.avatar || undefined)"
+            :stamp="date.formatDate(comment.createdAt, 'YYYY-MM-DD HH:mm')"
           />
           <q-input autogrow filled class="q-mt-md" v-model="commentText" v-if="application.row.userId == authInfo().userId" label="Комментарий">
             <template v-slot:after>
@@ -97,13 +98,22 @@ import {
 import { useRoute } from 'vue-router';
 import { api } from 'boot/axios';
 import { mapGetters } from 'vuex';
-import { date } from 'quasar';
+import { date, useQuasar } from 'quasar';
 import { statusList } from 'src/utils/constants';
 import RenderFields from '../components/RenderFields.vue';
+
+function getRandomInt(min: number, max: number) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+  return Math.floor(Math.random() * (max - min) + min);
+}
 
 export default defineComponent({
   components: { RenderFields },
   setup() {
+    const $q = useQuasar();
+
     const application = ref({
       row: {
         id: 0,
@@ -149,7 +159,26 @@ export default defineComponent({
     };
 
     const updateStatus = (newStatus: string) => {
-      void api.post('setStatus', { applicationId: application.value.row.id, status: newStatus });
+      const randNumber = getRandomInt(100000, 999999);
+      $q.dialog({
+        dark: true,
+        message: `Чтобы подтвердить своё действие, введите ${randNumber} в поле ниже.`,
+        prompt: {
+          model: '',
+          type: 'text',
+        },
+        cancel: true,
+        persistent: true,
+      }).onOk((data) => {
+        // eslint-disable-next-line eqeqeq
+        if (data == randNumber) {
+          void api.post('setStatus', { applicationId: application.value.row.id, status: newStatus }).then((resp) => {
+            if (resp.data.status === 'success') {
+              getApplication();
+            }
+          });
+        }
+      });
     };
 
     return {

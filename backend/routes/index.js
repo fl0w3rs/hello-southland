@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 const db = require('../utils/db.js');
+const config = require('../utils/config.js')
 
 /* GET home page. */
 router.get('/auth', async (req, res, next) => {
@@ -29,6 +30,18 @@ router.get('/getApplyInfo', async (req, res, next) => {
   });
 });
 
+router.get('/getAllApplications', async (req, res, next) => {
+  if(!req.user.authenticated) return res.sendStatus(401);
+
+  if(!(await req.user.isAdmin())) return res.json({ status: 'error' });
+
+  const applications = await db.hello.Application.findAll();
+
+  res.json({
+    list: applications,
+  });
+})
+
 router.post('/sendApplication', async (req, res, next) => {
   if(!req.user.authenticated) return res.sendStatus(401);
 
@@ -47,6 +60,31 @@ router.post('/sendApplication', async (req, res, next) => {
   })
 
   res.json({ status: 'success' });
+})
+
+router.post('/setStatus', async (req, res, next) => {
+  if(!req.user.authenticated) return res.sendStatus(401);
+
+  if(!(await req.user.isAdmin())) return res.json({ status: 'error' });
+  
+  const application = await db.hello.Application.findOne({
+    where: {
+      id: req.body.applicationId,
+    }
+  })
+
+  if(!application) return res.json({ status: 'error' });
+
+  if(application.status != 'processing') return res.json({ status: 'error' });
+
+  application.status = req.body.status || 'processing';
+
+  console.error(req.body.status);
+
+  await application.save();
+
+  return res.json({ status: 'success' });
+  
 })
 
 router.post('/sendComment', async (req, res, next) => {
@@ -71,6 +109,7 @@ router.post('/sendComment', async (req, res, next) => {
   const comment = await db.hello.Comment.create({
     userName: req.user.user.name,
     userId: req.user.user.member_id,
+    avatar: config.forumLink + 'uploads/' + req.user.user.dataValues.pp_main_photo,
     applicationId: application.id,
     text: req.body.text,
     isAdmin: !!req.body.admin

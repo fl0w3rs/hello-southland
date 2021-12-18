@@ -23,7 +23,7 @@ class User {
     this.session = session;
 
     const user = await db.forum.core_members.findOne({
-      attributes: ['member_id', 'member_group_id', 'name', 'mgroup_others'],
+      attributes: ['member_id', 'member_group_id', 'name', 'mgroup_others', 'pp_main_photo'],
       where: { member_id: session?.member_id }
     });
 

@@ -22,6 +22,9 @@ forum.core_members_known_devices = forum.db.define('core_members_known_devices',
     login_key: {
       type: DataTypes.STRING(32),
     },
+    pp_main_photo: {
+      type: DataTypes.TEXT
+    }
   },
   {
     tableName: 'core_members_known_devices',
@@ -99,6 +102,7 @@ hello.Comment = hello.db.define('comments',
     userId: DataTypes.INTEGER,
     isAdmin: DataTypes.BOOLEAN,
     text: DataTypes.TEXT,
+    avatar: DataTypes.TEXT,
   }, {
     tableName: 'comments'
   }
