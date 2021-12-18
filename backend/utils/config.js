@@ -1,6 +1,6 @@
 module.exports = {
   ipsPrefix: 'sp_',
-  adminGroups: [54],
+  adminGroups: [4],
   db: {
     forum: {
       dialect: 'mysql',

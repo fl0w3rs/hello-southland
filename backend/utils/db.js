@@ -88,7 +88,24 @@ hello.Application = hello.db.define('applications',
   }
 )
 
-// hello.Application.sync();
+hello.Comment = hello.db.define('comments',
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    userName: DataTypes.STRING(256),
+    userId: DataTypes.INTEGER,
+    isAdmin: DataTypes.BOOLEAN,
+    text: DataTypes.TEXT,
+  }, {
+    tableName: 'comments'
+  }
+)
+
+hello.Application.hasMany(hello.Comment);
+hello.Comment.belongsTo(hello.Application);
 
 module.exports = {
   forum,

@@ -70,6 +70,7 @@ import { defineComponent, ref, onBeforeMount } from 'vue';
 import { date, scroll, useQuasar } from 'quasar';
 import { api } from 'boot/axios';
 import { useRouter } from 'vue-router';
+import { statusList } from 'src/utils/constants';
 import RenderFields from '../components/RenderFields.vue';
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
@@ -89,21 +90,6 @@ export default defineComponent({
     const scrollToApplications = () => {
       scrollToElement(document.getElementById('applicationsSection')!);
     };
-
-    const statusList = {
-      processing: {
-        text: 'Обрабатывается',
-        classes: 'text-orange',
-      },
-      accepted: {
-        text: 'Одобрена',
-        classes: 'text-green',
-      },
-      declined: {
-        text: 'Отклонена',
-        classes: 'text-red-4',
-      },
-    } as Record<string, Record<string, string>>;
 
     const canApply = ref({ status: false, reason: 'Не получен ответ от бэкенда.' });
     const myApplications = ref<unknown[]>([]);

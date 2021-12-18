@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page style="">
     <q-parallax
       :height="sectionHeight"
       :speed="0"
@@ -392,7 +392,7 @@
               <div style="display: table; width: 100%;">
                 <div style="width: 150px; display: table-cell; vertical-align: top;">
                   <img
-                    src="https://southland-rp.ru/uploads/monthly_2021_03/137182397_LosSantosCountyFireDepartment.png.f6bfea91c7fe2f73dd0178234d70e450.png"
+                    src="https://southland-rp.ru/uploads/monthly_2021_12/984204028_LosSantosCountyFireDepartment.png.15f7cb4b9b10a7042470fa44865c56ca.png"
                     alt=""
                     style="width: 125px; height: auto;"
                     class="q-mr-md"
@@ -716,7 +716,7 @@
 
     <div
       class="q-pa-md row justify-center items-center"
-      :style='{ minHeight: `${sectionHeight}px` }'
+      :style='{ minHeight: `${sectionHeight / 2}px` }'
       id="joinUsSection"
     >
       <div class="row text-center justify-center">

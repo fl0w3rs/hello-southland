@@ -8,6 +8,7 @@ const db = require('../utils/db.js');
 router.get('/auth', async (req, res, next) => {
   res.json({
     authenticated: req.user.authenticated,
+    userId: req.user.user?.member_id || 0,
     name: req.user.user?.name || 'Гость',
     isAdmin: req.user.authenticated ? req.user.isAdmin() : false
   });
@@ -31,8 +32,6 @@ router.get('/getApplyInfo', async (req, res, next) => {
 router.post('/sendApplication', async (req, res, next) => {
   if(!req.user.authenticated) return res.sendStatus(401);
 
-  console.error(req.body);
-
   const canApply = await req.user.canApply();
   if(!canApply.status) return res.json({ status: 'error', message: canApply.reason })
 
@@ -50,6 +49,36 @@ router.post('/sendApplication', async (req, res, next) => {
   res.json({ status: 'success' });
 })
 
+router.post('/sendComment', async (req, res, next) => {
+  if(!req.user.authenticated) return res.sendStatus(401);
+
+  if(req.body.admin) {
+    if(!(await req.user.isAdmin())) return res.json({ status: 'error' });
+  }
+
+  const application = await db.hello.Application.findOne({
+    where: {
+      id: req.body.applicationId,
+    }
+  })
+
+  if(!application) return res.json({ status: 'error' });
+
+  if(!req.body.admin && application.userId != req.user?.user?.member_id) return res.json({ status: 'error' });
+
+  if(req.body?.text?.length  < 3) return res.json({ status: 'error' });
+
+  const comment = await db.hello.Comment.create({
+    userName: req.user.user.name,
+    userId: req.user.user.member_id,
+    applicationId: application.id,
+    text: req.body.text,
+    isAdmin: !!req.body.admin
+  })
+
+  res.json({ status: 'success' });
+})
+
 router.post('/getApplication', async (req, res, next) => {
   if(!req.user.authenticated) return res.sendStatus(401);
 
@@ -58,7 +87,8 @@ router.post('/getApplication', async (req, res, next) => {
   const application = await db.hello.Application.findOne({
     where: {
       id: req?.body?.id || 0
-    }
+    },
+    include: db.hello.Comment
   })
 
   if(!application) return res.json({ row: {} });
