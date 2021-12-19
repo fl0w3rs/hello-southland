@@ -112,6 +112,7 @@ hello.Comment = hello.db.define('comments',
 hello.Application.hasMany(hello.Comment);
 hello.Comment.belongsTo(hello.Application);
 
+
 module.exports = {
   forum,
   hello,

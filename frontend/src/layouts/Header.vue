@@ -17,9 +17,15 @@
             />
           </div>
           <q-space></q-space>
-          <div>
+          <div class="row q-gutter-xs justify-center items-center">
             <q-btn label="Главная" to="/" flat color="white"></q-btn>
+            <q-btn label="Форум" type="a" href="https://forum.southland-rp.ru/" flat color="white"></q-btn>
             <q-btn v-if="authInfo().isAdmin" label="Админ панель" to="/admin/application/list" flat color="white"></q-btn>
+            <q-btn v-if="!authInfo().authenticated" label="Вход" type="a" href="https://forum.southland-rp.ru/login/" flat color="white"></q-btn>
+            <q-btn v-if="!authInfo().authenticated" label="Регистрация" type="a" href="https://forum.southland-rp.ru/register/" flat color="white"></q-btn>
+            <div class="q-ml-sm" v-if="authInfo().authenticated">
+              {{authInfo().name}}
+            </div>
           </div>
         </div>
 
@@ -83,11 +89,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="row justify-center">
-        <q-btn flat color="white" label="Forum" type="a" href="https://southland-rp.ru"></q-btn>
-        <q-btn flat color="white" label="FAQ" type="a" href="https://southland-rp.ru/faq"></q-btn>
-        <q-btn flat color="white" label="Apply" to="/apply"></q-btn>
-      </div> -->
     </q-toolbar>
   </q-header>
 </template>

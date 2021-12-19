@@ -135,6 +135,9 @@ router.post('/getApplication', async (req, res, next) => {
 
   if(!isAdmin && application?.userId != req.user?.user?.member_id) return res.json({ row: {}, fields: application?.fields });
 
+  application.fields = JSON.parse(application.fields) || [];
+  application.values = JSON.parse(application.values) || [];
+
   res.json({ row: application, fields: application?.fields });
 })
 

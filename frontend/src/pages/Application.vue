@@ -39,7 +39,7 @@
             <q-btn class="button-shadow-green" color="green" label="Одобрить" icon="done" @click="updateStatus('accepted')" />
             <q-btn class="button-shadow-red q-mr-md" color="red" label="Отклонить" icon="close" @click="updateStatus('declined')"  />
           </template>
-          <q-btn color="orange" type="a" :href="`https://southland.fl0w3rs.dev/index.php?/profile/${application?.row?.userId}-hello`" label="Форумный аккаунт" icon="person" />
+          <q-btn color="orange" type="a" :href="`https://forum.southland-rp.ru/index.php?/profile/${application?.row?.userId}-hello`" label="Форумный аккаунт" icon="person" />
         </div>
       </div>
       <div class="q-mt-md col-12 col-md-10 col-lg-8">
