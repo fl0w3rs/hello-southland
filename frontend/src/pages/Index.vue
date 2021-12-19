@@ -37,7 +37,7 @@
     </q-parallax>
 
     <div
-      class="q-pa-md row justify-center items-center"
+      class="q-px-md q-py-xl row justify-center items-center"
       :style='{ minHeight: `${sectionHeight}px` }'>
       <div class="row text-center justify-center">
         <div class="col-12">
@@ -129,19 +129,19 @@
       <div class="column text-center">
         <h3 class="text-white text-bold q-ma-none q-mb-lg">Департаменты</h3>
         <div class="dlogos">
-          <a href="#" class="dlogos__item dlogos__item__first">
+          <a @click="gotoCarouselSlide('lspd')" class="dlogos__item dlogos__item__first cursor-pointer">
             <img src="https://southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.png.666047c073e67b4f132498b0f6fe083b.png" alt="">
           </a>
-          <a href="#" class="dlogos__item">
+          <a @click="gotoCarouselSlide('sahp')" class="dlogos__item cursor-pointer">
             <img src="https://southland-rp.ru/uploads/monthly_2021_04/523595685_SanAndreasHighwayPatrol.thumb.png.0d0f44fe380287f2e5b88b8d4c0813d9.png" alt="">
           </a>
-          <a href="#" class="dlogos__item">
+          <a @click="gotoCarouselSlide('lscofd')"  class="dlogos__item cursor-pointer">
             <img src="https://southland-rp.ru/uploads/monthly_2021_12/984204028_LosSantosCountyFireDepartment.png.15f7cb4b9b10a7042470fa44865c56ca.png" alt="">
           </a>
-          <a href="#" class="dlogos__item">
+          <a @click="gotoCarouselSlide('dispatch')" class="dlogos__item cursor-pointer">
             <img src="https://southland-rp.ru/uploads/monthly_2021_03/ddd2.thumb.png.e67cb87d23f25d4cfa9bb7d6228bc775.png" alt="">
           </a>
-          <a href="#" class="dlogos__item"><img src="https://i.imgur.com/fKi3IDT.png" alt=""></a>
+          <a @click="gotoCarouselSlide('civilian')" class="dlogos__item cursor-pointer"><img src="https://i.imgur.com/fKi3IDT.png" alt=""></a>
         </div>
 
       </div>
@@ -150,6 +150,7 @@
     <div
       class="q-pa-md row justify-center items-center"
       :style='{ minHeight: `${sectionHeight}px` }'
+      id="departmentCarousel"
     >
       <q-carousel
         v-model="carouselSlide"
@@ -776,12 +777,18 @@ export default defineComponent({
       scrollPosition.value[image] = percentage;
     };
 
+    const gotoCarouselSlide = (val: string) => {
+      carouselSlide.value = val;
+      scrollToElement(document.getElementById('departmentCarousel')!);
+    };
+
     return {
       sectionHeight: window.innerHeight,
       scrollToJoinSection,
       carouselSlide,
       scrollCallback,
       scrollPosition,
+      gotoCarouselSlide,
 
       ...mapGetters({
         applyInfo: 'main/getApplyInfo',

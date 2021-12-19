@@ -56,7 +56,8 @@ router.post('/sendApplication', async (req, res, next) => {
     userId: req.user.user.member_id,
     fields: JSON.parse(fields.s_value),
     values: req.body.form,
-    status: 'processing'
+    status: 'processing',
+    userName: req.user.user.name
   })
 
   res.json({ status: 'success' });

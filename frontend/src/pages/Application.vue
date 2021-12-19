@@ -1,6 +1,5 @@
 <template>
-  <q-page class="q-pb-lg" style="background-color: #000000;
-background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
+  <q-page class="q-pb-xl" style="background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
     <div
       :style='{ minHeight: `${sectionHeight}px` }'
       class="row q-pa-md justify-center relative-position"
@@ -37,10 +36,10 @@ background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
         </div>
         <div class="col-12 row col-md-10 col-lg-8 q-mt-md text-left justify-center items-center q-gutter-xs" v-if="authInfo().isAdmin">
           <template v-if="application?.row?.status == 'processing'">
-            <q-btn color="green" label="Одобрить" icon="done" @click="updateStatus('accepted')" outline />
-            <q-btn color="red" label="Отклонить" icon="close" @click="updateStatus('declined')" outline />
+            <q-btn class="button-shadow-green" color="green" label="Одобрить" icon="done" @click="updateStatus('accepted')" />
+            <q-btn class="button-shadow-red q-mr-md" color="red" label="Отклонить" icon="close" @click="updateStatus('declined')"  />
           </template>
-          <q-btn color="orange" type="a" :href="`https://southland.fl0w3rs.dev/index.php?/profile/${application?.row?.userId}-hello`" label="Форумный аккаунт" icon="person" outline />
+          <q-btn color="orange" type="a" :href="`https://southland.fl0w3rs.dev/index.php?/profile/${application?.row?.userId}-hello`" label="Форумный аккаунт" icon="person" />
         </div>
       </div>
       <div class="q-mt-md col-12 col-md-10 col-lg-8">
@@ -54,7 +53,7 @@ background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
         </q-form>
 
       </div>
-      <div class="col-12 col-md-10 col-lg-8 row bg-htransparent rounded-borders q-pa-lg">
+      <div class="col-12 col-md-10 col-lg-8 q-mt-md row bg-htransparent rounded-borders q-pa-lg">
         <span class="text-bold text-h4 q-mb-lg">Чат с командой проекта</span>
         <div style="min-width: 100%;">
           <q-chat-message
@@ -62,17 +61,17 @@ background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
             :name="comment.isAdmin ? authInfo().isAdmin ? `SouthLAnd Project (${comment.userName})` : 'SouthLAnd Project' : comment.userName"
             :text="[ comment.text ]"
             :sent="authInfo().userId == comment.userId"
-            :avatar="comment.isAdmin ? 'https://i.imgur.com/gMY3Cz3.png' : (comment?.avatar || undefined)"
+            :avatar="comment.isAdmin ? 'https://i.imgur.com/txwsu9k.png' : (comment?.avatar?.length > 48 ? comment?.avatar : 'https://i.imgur.com/tdi3NGa.jpg')"
             :stamp="date.formatDate(comment.createdAt, 'YYYY-MM-DD HH:mm')"
           />
           <q-input autogrow filled class="q-mt-md" v-model="commentText" v-if="application.row.userId == authInfo().userId" label="Комментарий">
             <template v-slot:after>
-              <q-btn dense flat label="Отправить" icon="send" @click="sendComment" />
+              <q-btn dense label="Отправить" icon="send" color="blue" @click="sendComment" />
             </template>
           </q-input>
           <q-input autogrow filled class="q-mt-md" v-model="adminCommentText" v-if="authInfo().isAdmin" label="Комментарий">
             <template v-slot:after>
-              <q-btn dense flat label="Отправить как администратор"  @click="sendAdminComment" color="red" icon="send" />
+              <q-btn dense label="Отправить как администратор"  @click="sendAdminComment" color="red" icon="send" />
             </template>
           </q-input>
         </div>
@@ -86,6 +85,15 @@ background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
 .bg-htransparent {
   background: rgba(255, 255, 255, 0.07);
 }
+
+.button-shadow-green {
+  box-shadow: 0 0 15px $green;
+}
+
+.button-shadow-red {
+  box-shadow: 0 0 15px $red;
+}
+
 </style>
 
 <script lang="ts">

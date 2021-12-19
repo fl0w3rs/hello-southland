@@ -3,10 +3,9 @@
     <q-toolbar class="q-px-lg column">
       <div class="row justify-start full-width" style="height: 95px;">
         <div
-          :style='{ transform: `rotate(${rotateDeg}deg)` }'
-          class="text-bold brand-text cursor-pointer"
+          class="text-bold brand-text full-width row items-center"
         >
-          <div v-morph:logo:mygroup:500.resize="morphGroupModel">
+          <div class="cursor-pointer" :style='{ transform: `rotate(${rotateDeg}deg)` }' v-morph:logo:mygroup:500.resize="morphGroupModel">
             <img
               class="q-mt-md"
               :src='
@@ -17,7 +16,13 @@
               v-if="!hideLogo"
             />
           </div>
+          <q-space></q-space>
+          <div>
+            <q-btn label="Главная" to="/" flat color="white"></q-btn>
+            <q-btn v-if="authInfo().isAdmin" label="Админ панель" to="/admin/application/list" flat color="white"></q-btn>
+          </div>
         </div>
+
         <div
           v-morph:faq:mygroup:1000.resize="morphGroupModel"
           class="fullscreen bg-dark text-white q-pa-xl full-window"
@@ -91,6 +96,7 @@
 import {
   defineComponent, onBeforeMount, onBeforeUnmount, ref, computed,
 } from 'vue';
+import { mapGetters } from 'vuex';
 
 export default defineComponent({
   // name: 'LayoutName',
@@ -132,6 +138,10 @@ export default defineComponent({
       morphGroupModel,
       switchMorph,
       hideLogo,
+
+      ...mapGetters({
+        authInfo: 'main/getAuth',
+      }),
     };
   },
 });

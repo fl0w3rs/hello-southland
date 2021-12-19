@@ -4,7 +4,6 @@
       <q-btn-toggle
         v-model="tab"
         toggle-color="primary"
-        outline
         :options="[
           {label: 'Все', value: 'all'},
           {label: 'В обработке', value: 'processing'},
@@ -21,6 +20,11 @@
         row-key="id"
         dark
         color="amber"
+        :pagination="{
+          rowsPerPage: 15,
+          sortBy: 'id',
+          descending: true
+        }"
         @row-click="openApplication"
       />
     </div>
@@ -54,7 +58,13 @@ export default defineComponent({
       tab,
       applicationListColumns: [
         {
-          name: 'id', align: 'center', label: 'Номер заявки', field: 'id', sortable: true,
+          name: 'id', align: 'center', label: 'Номер заявки', field: 'id', sortable: true, sortOrder: 'ad',
+        },
+        {
+          name: 'userId', align: 'center', label: 'ID форума', field: 'userId', sortable: true,
+        },
+        {
+          name: 'userName', align: 'center', label: 'Форумный аккаунт', field: 'userName',
         },
         {
           name: 'createdAt',

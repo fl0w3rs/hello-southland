@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="q-pb-xl" style="background-image: linear-gradient(147deg, #000000 0%, #434343 74%);">
     <div
       :style='{ minHeight: `${sectionHeight}px` }'
       class="row q-pa-md justify-center text-center relative-position"
@@ -50,7 +50,7 @@
     <div class="text-center q-py-xl q-px-md" v-if="myApplications?.length > 0" id="applicationsSection">
       <span class="text-h5 text-bold">Мои заявки</span>
       <q-table
-        class="q-mx-xl q-my-md no-shadow"
+        class="q-mx-xl q-my-md no-shadow bg-transparent"
         :rows="myApplications"
         :columns="applicationListColumns"
         row-key="id"
@@ -136,20 +136,31 @@ export default defineComponent({
         });
       }
 
-      void api.post('sendApplication', {
-        form: form.value,
-      }).then((resp) => {
-        if (resp.data.status === 'success') {
-          updateCanApply();
-          updateMyApplications();
+      $q.dialog({
+        message: 'Проверка заявки может занять до трёх рабочих дней.<br/>Изменить поданную заявку будет невозможно.<br/><br/>Отправить заявку?',
+        html: true,
+        cancel: true,
+        ok: {
+          label: 'Да',
+          flat: true,
+        },
+        persistent: true,
+      }).onOk(() => {
+        void api.post('sendApplication', {
+          form: form.value,
+        }).then((resp) => {
+          if (resp.data.status === 'success') {
+            updateCanApply();
+            updateMyApplications();
 
-          $q.notify({
-            type: 'positive',
-            message: 'Заявка успешно отправлена.',
-          });
+            $q.notify({
+              type: 'positive',
+              message: 'Заявка успешно отправлена.',
+            });
 
-          onFormReset();
-        }
+            onFormReset();
+          }
+        });
       });
 
       return true;
