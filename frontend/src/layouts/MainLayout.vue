@@ -48,7 +48,7 @@
         </q-space>
         <div class="text-bold brand-text brand-text-footer">
           <span class="brand-text">
-            South<span class="brand-text-la">LA</span>nd Project
+            <span class="cursor-pointer" @click="redirectTo('https://forum.southland-rp.ru/guidelines/')">Правила сообщества</span> | South<span class="brand-text-la">LA</span>nd Project
           </span>
         </div>
       </q-toolbar>

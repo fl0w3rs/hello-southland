@@ -1,5 +1,5 @@
 <template>
-  <q-page class="row justify-center items-center">
+  <q-page class="row justify-center items-center q-py-xl">
     <div class="col-12 q-gutter-xs row justify-center">
       <q-btn-toggle
         v-model="tab"
@@ -21,7 +21,7 @@
         dark
         color="amber"
         :pagination="{
-          rowsPerPage: 15,
+          rowsPerPage: 8,
           sortBy: 'id',
           descending: true
         }"
