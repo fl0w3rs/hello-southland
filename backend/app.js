@@ -19,12 +19,15 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.use(async (req, res, next) => {
+app.use((req, res, next) => {
   const user = new User();
-  await user.init(req.cookies);
 
-  req.user = user;
-  next();
+  user.init(req.cookies)
+    .then(() => {
+      req.user = user;
+      next();
+    })
+    .catch(next);
 })
 
 app.use('/api/', indexRouter);

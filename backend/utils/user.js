@@ -1,19 +1,22 @@
 const db = require('./db.js');
 const config = require('./config.js')
 
-Array.prototype.intersects = function (arr) {
-  if (!Array.isArray(arr)) return false;
-  return this.filter((x) => arr.includes(x));
-};
-
 class User {
   authenticated = false;
+
+  groups = [];
 
   async init(cookies) {
     this.authenticated = false;
 
+    // cookie-parser turns "j:{...}" cookies into objects, so only accept a plain string
+    const loginKey = cookies[`${config.ipsPrefix}login_key`];
+    if (typeof loginKey !== 'string' || loginKey === '') {
+      return;
+    }
+
     const session = await db.forum.core_members_known_devices.findOne({
-      attributes: ['member_id'], where: { login_key: cookies[`${config.ipsPrefix}login_key`] || '' }
+      attributes: ['member_id'], where: { login_key: loginKey }
     });
 
     if (!session) {
@@ -34,15 +37,9 @@ class User {
     this.user = user;
     this.authenticated = true;
 
-    let groups = [user.member_group_id];
-    groups = groups.concat(user.mgroup_others.split(','));
-
-    for (let i = 0; i < groups.length; i += 1) {
-      groups[i] = parseInt(groups[i], 10);
-      if (!groups[i]) groups.splice(i, 1);
-    }
-
-    this.groups = groups;
+    this.groups = [user.member_group_id, ...(user.mgroup_others || '').split(',')]
+      .map(Number)
+      .filter(Boolean);
   }
 
   async canApply() {
@@ -65,7 +62,7 @@ class User {
       reason = 'У Вас уже есть активная заявка.';
     }
   
-    if(status.s_value == '0') {
+    if(!status || status.s_value == '0') {
       canApply = false;
       reason = 'Приём заявок закрыт.';
     }
@@ -74,8 +71,7 @@ class User {
   }
 
   isAdmin() {
-    const groups = this.groups;
-    return groups.intersects(config.adminGroups).length > 0;
+    return this.groups.some((group) => config.adminGroups.includes(group));
   }
 }
 
