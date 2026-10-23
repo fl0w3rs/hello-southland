@@ -64,3 +64,7 @@ npx quasar dev
 For production, build the frontend with `npx quasar build` and serve it together with the backend's `/api` on the same host.
 
 The landing photos are public domain or CC0 images from Wikimedia Commons, listed in [frontend/public/images/landing/CREDITS.md](frontend/public/images/landing/CREDITS.md). The original screenshots from the project's forum are no longer available.
+
+## A note on old credentials
+
+Some early commits contain database credentials from the original deployment. They are long out of date and no longer work, so there is no need to report them. The current code reads all credentials from environment variables.
