@@ -70,11 +70,6 @@ class User {
       reason = 'Приём заявок закрыт.';
     }
   
-    // if(this.user.member_group_id != 3) {
-    //   canApply = false;
-    //   reason = 'Вы уже кандидат или участник сообщества.';
-    // }
-
     return { status: canApply, reason }
   }
 

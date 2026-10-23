@@ -81,7 +81,6 @@ function scrollToElement(el: HTMLElement) {
 }
 
 export default defineComponent({
-  // name: 'PageName'
   components: { RenderFields },
   setup() {
     const $q = useQuasar();

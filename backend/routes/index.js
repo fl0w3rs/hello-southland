@@ -1,11 +1,9 @@
-const { application } = require('express');
 var express = require('express');
 var router = express.Router();
 
 const db = require('../utils/db.js');
 const config = require('../utils/config.js')
 
-/* GET home page. */
 router.get('/auth', async (req, res, next) => {
   res.json({
     authenticated: req.user.authenticated,
@@ -80,7 +78,6 @@ router.post('/setStatus', async (req, res, next) => {
 
   application.status = req.body.status || 'processing';
 
-  console.error(req.body.status);
 
   await application.save();
 
