@@ -3,7 +3,7 @@
     <q-parallax
       :height="sectionHeight"
       :speed="0"
-      src="https://forum.southland-rp.ru/uploads/monthly_2020_12/large.20201221142545_1.png.4232c6a11aa86afe34d2c898303aba9e.png"
+      src="images/landing/hero.jpg"
     >
       <div class="row justify-center items-center text-center q-pa-md">
         <div class="col-12 q-mb-xl">
@@ -64,15 +64,15 @@
         <div class="col-12 row q-mt-xl items-center justify-center">
           <div class="col-12 col-md-6 column items-center aboutUs--images">
             <img
-              src="https://forum.southland-rp.ru/uploads/monthly_2021_03/large.20210301152822_1.jpg.ace41d8122e74a32067eca113904a958.jpg"
+              src="images/landing/city-santa-monica.jpg"
               style="width: 400px; height: auto"
             />
             <img
-              src="https://forum.southland-rp.ru/uploads/monthly_2021_02/large.20210217093008_1.jpg.9db1950a6f52d233ee48086457cacbf7.jpg"
+              src="images/landing/city-downtown.jpg"
               style="width: 400px; height: auto"
             />
             <img
-              src="https://forum.southland-rp.ru/uploads/monthly_2021_04/large.20210423215412_1.png.06e5c6ca6b5b0d2a8e1dbf7f9981977c.png"
+              src="images/landing/lspd-metro.jpg"
               style="width: 400px; height: auto"
             />
           </div>
@@ -111,7 +111,7 @@
       <template v-slot:media>
         <div>
           <img
-            src="https://i.yapx.ru/PkcWR.png"
+            src="images/landing/city-freeway.jpg"
             :style="{
               height: 'auto',
               width: '100%',
@@ -120,9 +120,6 @@
               )`
             }"
           >
-          <!-- http://i.imgur.com/FQ7FE0X.jpg -->
-          <!-- https://forum.southland-rp.ru/uploads/monthly_2021_03/large.60276478_FiveM_GTAProcess2021-03-0800-56-18.png.f9ce023ec9cc33163959782163731dfe.png -->
-          <!-- https://forum.southland-rp.ru/uploads/monthly_2021_06/large.1243668866_FiveM_GTAProcess2021-06-0123-34-55.png.72c37b5cc1f3cb18e6e2b0463aa829e4.png -->
 
         </div>
       </template>
@@ -130,18 +127,18 @@
         <h3 class="text-white text-bold q-ma-none q-mb-lg">Департаменты</h3>
         <div class="dlogos">
           <a @click="gotoCarouselSlide('lspd')" class="dlogos__item dlogos__item__first cursor-pointer">
-            <img src="https://forum.southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.png.666047c073e67b4f132498b0f6fe083b.png" alt="">
+            <img src="images/emblems/police.svg" alt="">
           </a>
           <a @click="gotoCarouselSlide('sahp')" class="dlogos__item cursor-pointer">
-            <img src="https://forum.southland-rp.ru/uploads/monthly_2021_04/523595685_SanAndreasHighwayPatrol.thumb.png.0d0f44fe380287f2e5b88b8d4c0813d9.png" alt="">
+            <img src="images/emblems/highway.svg" alt="">
           </a>
           <a @click="gotoCarouselSlide('lscofd')"  class="dlogos__item cursor-pointer">
-            <img src="https://forum.southland-rp.ru/uploads/monthly_2021_12/984204028_LosSantosCountyFireDepartment.png.15f7cb4b9b10a7042470fa44865c56ca.png" alt="">
+            <img src="images/emblems/fire.svg" alt="">
           </a>
           <a @click="gotoCarouselSlide('dispatch')" class="dlogos__item cursor-pointer">
-            <img src="https://forum.southland-rp.ru/uploads/monthly_2021_03/ddd2.thumb.png.e67cb87d23f25d4cfa9bb7d6228bc775.png" alt="">
+            <img src="images/emblems/dispatch.svg" alt="">
           </a>
-          <a @click="gotoCarouselSlide('civilian')" class="dlogos__item cursor-pointer"><img src="https://i.imgur.com/fKi3IDT.png" alt=""></a>
+          <a @click="gotoCarouselSlide('civilian')" class="dlogos__item cursor-pointer"><img src="images/emblems/civilian.png" alt=""></a>
         </div>
 
       </div>
@@ -171,7 +168,7 @@
               <div style="display: table; width: 100%;">
                 <div style="width: 150px; display: table-cell; vertical-align: top;">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_04/BCSOLSPD.thumb.png.e2519e6492c1e511ae6cb3a51ca1dda4.png"
+                    src="images/emblems/police.svg"
                     alt=""
                     style="width: 125px; height: auto;"
                     class="q-mr-md"
@@ -219,7 +216,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_05/large.2021_05.21-09_52.png.0a52d2aaabd15c136187e37099c6fb9a.png"
+                    src="images/landing/lspd-patrol.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -247,7 +244,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_04/large.20210423215412_1.png.06e5c6ca6b5b0d2a8e1dbf7f9981977c.png"
+                    src="images/landing/lspd-metro.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -273,7 +270,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_02/large.1508423402_FiveM_GTAProcess2021-02-1803-12-09.png.3175cbf99eaf2a3b81150fffbd218668.png"
+                    src="images/landing/lspd-detective.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -287,7 +284,7 @@
               <div style="display: table; width: 100%;">
                 <div style="width: 150px; display: table-cell; vertical-align: top;">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_04/523595685_SanAndreasHighwayPatrol.thumb.png.0d0f44fe380287f2e5b88b8d4c0813d9.png"
+                    src="images/emblems/highway.svg"
                     alt=""
                     style="width: 125px; height: auto;"
                     class="q-mr-md"
@@ -335,7 +332,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_06/large.2021_06.07-20_09.png.996b5cc8f2d9590cf3ce53fac748f754.png"
+                    src="images/landing/sahp-patrol.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -357,7 +354,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2020_11/large.20201127102627_1.png.6610051c93bd9b5c8e998b6b1a936041.png"
+                    src="images/landing/sahp-air.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -379,7 +376,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_06/large.Screenshot_502.png.13cad68f6cbe4cd8337ce2e4e4122249.png"
+                    src="images/landing/sahp-dui.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -393,7 +390,7 @@
               <div style="display: table; width: 100%;">
                 <div style="width: 150px; display: table-cell; vertical-align: top;">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_12/984204028_LosSantosCountyFireDepartment.png.15f7cb4b9b10a7042470fa44865c56ca.png"
+                    src="images/emblems/fire.svg"
                     alt=""
                     style="width: 125px; height: auto;"
                     class="q-mr-md"
@@ -440,7 +437,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2020_12/large.161894487_.jpg.30bcb23f7687ad4f480bcec1f431e003.jpg"
+                    src="images/landing/fd-firefighter.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -464,7 +461,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_04/large.349366264_DesktopScreenshot2021_04.29-01_21_08_13.png.a45bbeebd801cc99c500d5ae99a85f1b.png"
+                    src="images/landing/fd-paramedic.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -488,7 +485,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_03/large.1917942416_DesktopScreenshot2021_03.25-02_27_13_73.png.781ed9810840719402cc5af0233e1212.png"
+                    src="images/landing/fd-usar.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -502,7 +499,7 @@
               <div style="display: table; width: 100%;">
                 <div style="width: 150px; display: table-cell; vertical-align: top;">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_03/ddd2.thumb.png.e67cb87d23f25d4cfa9bb7d6228bc775.png"
+                    src="images/emblems/dispatch.svg"
                     alt=""
                     style="width: 125px; height: auto;"
                     class="q-mr-md"
@@ -553,7 +550,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_06/large.2021_06.08-20_35.png.ca4c6ffefc1276c629e2f6a5959fffa5.png"
+                    src="images/landing/dispatch-dispatcher.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -578,7 +575,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_05/large.unknown4.jpg.4cdb5aa8524701bd04479db7ebc6354a.jpg"
+                    src="images/landing/city-downtown.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -604,7 +601,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_04/large.301539443_FiveM_GTAProcess2021-04-2122-27-03.jpg.046660095e17be74f7662d09f0ee305b.jpg"
+                    src="images/landing/dispatch-911.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -628,7 +625,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_05/large_911.jpg.e144e6a5f2ea85406e109e3c235f666f.jpg"
+                    src="images/landing/dispatch-coordinator.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -642,7 +639,7 @@
               <div style="display: table; width: 100%;">
                 <div style="width: 150px; display: table-cell; vertical-align: top;">
                   <img
-                    src="https://i.imgur.com/fKi3IDT.png"
+                    src="images/emblems/civilian.png"
                     alt=""
                     style="width: 125px; height: auto;"
                     class="q-mr-md"
@@ -677,7 +674,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://forum.southland-rp.ru/uploads/monthly_2021_05/large.1817409520_.PNG.25df4ab5e84b6e912602b19282ae48a3.PNG"
+                    src="images/landing/civilian-venice.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -702,7 +699,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-3">
                   <img
-                    src="https://i.yapx.ru/PkcHG.png"
+                    src="images/landing/city-santa-monica.jpg"
                     style="width: 100%"
                   />
                 </div>
@@ -812,14 +809,10 @@ export default defineComponent({
   padding: 0px;
   flex-direction: row;
   &__item {
-    // background-color: #596376;
-    // border: 2px solid #1f2532;
-    // border-radius: 100%;
     color: #ffffff;
     height: 96px;
     width: 96px;
     transition: margin 0.3s ease-in-out;
-    // overflow: hidden;
     margin-left: -32px;
     &__first {
       margin-left: 0px;

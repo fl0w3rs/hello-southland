@@ -9,7 +9,7 @@
             <img
               class="q-mt-md"
               :src='
-                "https://i.imgur.com/gMY3Cz3.png"
+                "images/logo.png"
               '
               @click="switchMorph"
               height="80"
@@ -100,7 +100,6 @@ import {
 import { mapGetters } from 'vuex';
 
 export default defineComponent({
-  // name: 'LayoutName',
   setup() {
     const scrollPos = ref(0);
     const rotateStep = (window.innerHeight / 360);

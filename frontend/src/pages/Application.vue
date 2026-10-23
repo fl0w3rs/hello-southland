@@ -61,7 +61,7 @@
             :name="comment.isAdmin ? authInfo().isAdmin ? `SouthLAnd Project (${comment.userName})` : 'SouthLAnd Project' : comment.userName"
             :text="[ comment.text ]"
             :sent="authInfo().userId == comment.userId"
-            :avatar="comment.isAdmin ? 'https://i.imgur.com/txwsu9k.png' : (comment?.avatar?.length > 48 ? comment?.avatar : 'https://i.imgur.com/tdi3NGa.jpg')"
+            :avatar="comment.isAdmin ? 'images/avatar-admin.png' : (comment?.avatar?.length > 48 ? comment?.avatar : 'images/avatar-default.png')"
             :stamp="date.formatDate(comment.createdAt, 'YYYY-MM-DD HH:mm')"
           />
           <q-input autogrow filled class="q-mt-md" v-model="commentText" v-if="application.row.userId == authInfo().userId" label="Комментарий">

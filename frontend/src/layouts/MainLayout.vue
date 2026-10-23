@@ -4,7 +4,7 @@
       <div class="fullscreen bg-black" v-if="!isPageLoaded">
         <div class="absolute-center">
           <img
-            src="https://media.discordapp.net/attachments/918962856660201512/918983379985240124/logo_krug2_1.png?width=668&height=676"
+            src="images/logo.png"
             alt=""
             height="250"
           >
@@ -25,11 +25,6 @@
     <q-footer class="bg-transparent" reveal>
       <q-toolbar class="q-py-md q-px-lg">
 
-        <!-- <div class="text-bold brand-text brand-text-footer">
-          South<span
-            class="brand-text-la"
-          >LA</span>nd Project
-        </div> -->
         <div class="text-bold q-gutter-md">
           <q-icon
             name="fab fa-vk"
