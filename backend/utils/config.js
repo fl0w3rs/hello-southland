@@ -1,23 +1,20 @@
+const env = process.env;
+
+const dbConfig = (prefix) => ({
+  dialect: 'mysql',
+
+  host: env[`${prefix}_DB_HOST`] || 'localhost',
+  database: env[`${prefix}_DB_NAME`],
+  username: env[`${prefix}_DB_USER`],
+  password: env[`${prefix}_DB_PASSWORD`],
+});
+
 module.exports = {
-  ipsPrefix: 'sp_',
-  adminGroups: [4, 57, 20],
-  forumLink: 'https://forum.southland-rp.ru/',
+  ipsPrefix: env.IPS_COOKIE_PREFIX || 'sp_',
+  adminGroups: (env.ADMIN_GROUPS || '4,57,20').split(',').map(Number),
+  forumLink: env.FORUM_URL || 'https://forum.example.com/',
   db: {
-    forum: {
-      dialect: 'mysql',
-  
-      host: 'monterrey.berch.cloud',
-      database: 'forumdb',
-      username: 'southland',
-      password: 'W5r7J2y4',
-    },
-    hello: {
-      dialect: 'mysql',
-  
-      host: 'monterrey.berch.cloud',
-      database: 'hello_sp',
-      username: 'hello_sp',
-      password: '@446dmwH',
-    },
+    forum: dbConfig('FORUM'),
+    hello: dbConfig('HELLO'),
   }
 }
