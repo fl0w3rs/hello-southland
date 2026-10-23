@@ -88,6 +88,9 @@ module.exports = configure((ctx) => ({
     },
     port: 6662,
     open: false, // opens browser window automatically
+    proxy: {
+      '/api': process.env.API_URL || 'http://localhost:6663',
+    },
   },
 
   // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
