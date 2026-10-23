@@ -32,7 +32,7 @@
           @reset="onFormReset"
           class="q-gutter-md"
         >
-          <render-fields :fields="fields" :form="form" @onUpdate="updateForm" />
+          <render-fields :key="formKey" :fields="fields" :form="form" @onUpdate="updateForm" />
 
           <q-toggle
             v-model="checkBoxes.ageAccepted" label="Я подтверждаю, что мой возраст равен или более 15 лет"
@@ -40,7 +40,7 @@
           <q-toggle v-model="checkBoxes.rulesAccepted" label="Я прочитал Правила сообщества и Политику конфиденциальности и согласен с ними" />
 
           <div>
-            <q-btn label="Отправить" type="submit" color="primary"/>
+            <q-btn label="Отправить" type="submit" color="primary" :loading="sending"/>
             <q-btn label="Очистить" type="reset" color="primary" flat class="q-ml-sm" />
           </div>
         </q-form>
@@ -122,9 +122,13 @@ export default defineComponent({
     });
 
     const form = ref({});
+    // RenderFields keeps its own copy of the values, so re-create it to clear the inputs
+    const formKey = ref(0);
+    const sending = ref(false);
 
     const onFormReset = () => {
       form.value = {};
+      formKey.value += 1;
     };
 
     const onFormSubmit = () => {
@@ -145,10 +149,18 @@ export default defineComponent({
         },
         persistent: true,
       }).onOk(() => {
+        if (sending.value) return;
+        sending.value = true;
+
         void api.post('sendApplication', {
           form: form.value,
         }).then((resp) => {
-          if (resp.data.status === 'success') {
+          if (resp.data.status !== 'success') {
+            $q.notify({
+              type: 'negative',
+              message: resp.data.message || 'Не удалось отправить заявку.',
+            });
+          } else {
             updateCanApply();
             updateMyApplications();
 
@@ -159,6 +171,8 @@ export default defineComponent({
 
             onFormReset();
           }
+        }).finally(() => {
+          sending.value = false;
         });
       });
 
@@ -177,6 +191,8 @@ export default defineComponent({
       sectionHeight: window.innerHeight,
 
       form,
+      formKey,
+      sending,
       onFormSubmit,
       onFormReset,
 
@@ -213,8 +229,8 @@ export default defineComponent({
           name: 'status',
           label: 'Статус',
           field: 'status',
-          classes: (row: Record<string, any>) => statusList[row.status].classes || '',
-          format: (val: string) => statusList[val].text || val,
+          classes: (row: Record<string, any>) => statusList[row.status]?.classes || '',
+          format: (val: string) => statusList[val]?.text || val,
           class: 'text-bold',
           align: 'center',
         },

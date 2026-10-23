@@ -12,7 +12,7 @@
       </div>
       <div class="col-12 q-mb-md row text-center justify-center items-center">
         <div class="col-12 q-my-lg">
-          <span class="text-bold text-h5">Заявка #{{ application?.row?.id || '181' }}</span>
+          <span class="text-bold text-h5">Заявка #{{ application?.row?.id }}</span>
         </div>
         <div class="col-12 row col-md-10 col-lg-8 q-mt-md text-left justify-center items-center">
           <span class="q-pa-md text-h6 text-bold bg-htransparent rounded-borders">
